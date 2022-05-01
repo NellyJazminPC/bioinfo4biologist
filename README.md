@@ -362,7 +362,8 @@ Save and update the changes to the .bashrc file by typing
 source ~/.bashrc
 Hope you find this examples useful, do leave your comments in the comments section below.
 
-Please note that modifying the bashrc profile file can have disastrous effects on your system if you don’t know what you’re doing, and can result in you being unable to login.
+Please note that modifying the bashrc profile file can have disastrous effects on your system if you don’t know what you’re doing, and can result in you being unable to login.      
+
 More advanced manipulation of the bashrc script is beyond the scope of this course, but if you’re interested in reading further then check out the following link https://cloudzy.com/knowledge-base/what-is-linux-bashrc-and-how-to-use-it-full-guide/   
 
 
