@@ -1,4 +1,6 @@
 # Bioinformatics for Biologists (futurelearn.com)
+
+# Weak 1
 ### Glossary
 
 - argument - generally, arguments are options controlling how functions and commands should operate on specific data
@@ -365,5 +367,494 @@ Hope you find this examples useful, do leave your comments in the comments secti
 Please note that modifying the bashrc profile file can have disastrous effects on your system if you don’t know what you’re doing, and can result in you being unable to login.      
 
 More advanced manipulation of the bashrc script is beyond the scope of this course, but if you’re interested in reading further then check out the following link https://cloudzy.com/knowledge-base/what-is-linux-bashrc-and-how-to-use-it-full-guide/   
+
+# Weak 2
+### What is Bash/Shell Scripting?
+https://www.futurelearn.com/courses/linux-for-bioinformatics/3/steps/1339211
+
+
+**What is a shell?**  
+We can crudely break a computer down into two main components: the operating system (e.g. UNIX) and the hardware (e.g. memory, graphics or CPU). Without hardware, there is very little that can be done with a computer. In order to communicate with this hardware, a piece of software, known as the operating system, is installed.
+
+The operating system is typically broken down into two parts: the user space and the kernel. The kernel has direct access to the hardware and is responsible for sensitive tasks such as managing resources. Meanwhile, the user space acts as an interface, translating the needs of the user into the system calls that get run by the kernel.
+
+So, now we get to the original question, “what is a shell”? A good analogy here is a hazelnut. At the core of a hazelnut is a soft, edible kernel, surrounded by the hardened shell to protect it. In computing, the shell is the generic name for an application or program which allows access to the system’s resources. You may also see this referred to as the command line interpreter or CLI. It acts as a wrapper, protecting the sensitive kernel inside.
+
+**What is Bash?**   
+There are many several types of shell available, each of which has a distinctive syntax. The first, the Thompson shell, was released in 1971 by Ken Thompson. However, this had many limitations leading Stephen Bourne to release his Bourne shell six years later, in 1977. Providing a more functional interaction with the operating system, the Bourne shell not only served as a CLI, but introduced variables, loops and control flows into shell scripts – useful concepts we’ll be introducing in more detail shortly!
+
+Unfortunately, the most widely used shells at that time were not freely available. In order to bridge this divide, Brian Fox developed the Bourne-Again Shell (Bash) in 1988 for the GNU project. Bash is now the default shell on most Linux systems. Thus, understanding how to use it is a key part of any data scientist’s toolbox.
+
+Depending on your operating system, your default shell may not be Bash. To check which shell you are using, you can run the following command:
+
+```
+echo $SHELL
+```
+
+This will return the full path of your interpreter. If your interpreter is Bash you will see a path similar to:
+
+```
+/bin/bash
+```
+
+Alternatively, you may also see the Z, C or TC shells which would have paths similar to one of the following:
+
+```
+/bin/zsh
+/bin/csh
+/bin/tcsh
+```
+
+You can get a full list if the shells that are available on your system by running:
+
+```
+cat /etc/shells 
+```
+To change the shell your computer uses temporarily (i.e. in the current terminal) you can type the interpreter executable name. For example, to switch your shell to csh, you can enter:
+```
+csh
+```
+This is a good way to play with other shells without making a permanent change. To switch back to your existing shell, press ```Ctrl-D```.  
+
+If you like a particular shell and want to make the change permanent (i.e. set in all future terminals by default), you can use the chsh command with the -s option (bypassing the editor) and the path to the interpreter you want to use.
+
+```
+chsh -s /bin/bash
+```
+Note: you may need to log out (close the terminal) and log back in again (open a new terminal) for this change to take effect.
+
+**What is shell scripting?*** 
+Let’s say you want to know what proportion of lines in a file contain a particular phrase. First, you would need to determine the total number of lines in that file. Then, count the number of lines containing the phrase. Finally, you would need to perform a calculation to get the proportion of lines with that phrase. Simple, right?
+
+Now let’s say you need to do this for 100 files, once for each file, and record the results…not so simple, eh?
+
+You could take the extremely tedious approach of manually running the commands 100 times. But, how long would it be before you made a mistake? How would you track the output of all your commands? What if you needed to run the same thing again tomorrow?
+
+No matter how careful you are, manual errors always creep in during these kinds of repetitive tasks. We have a simple path to salvation from this tedium…Bash/shell scripting!
+
+Bash scripting is a powerful way to automate tasks which you need to execute on a computer. Put simply, a Bash script is just a collection of Bash commands which are kept in a text file.  
+
+### how to write and execute your very first Bash script  
+https://www.futurelearn.com/courses/linux-for-bioinformatics/3/steps/1339212?thread_ids%5B%5D=66795274#comment_66795274   
+Para mas detalles, esta interesanta nota: 
+https://dev.to/meleu/what-the-shebang-really-does-and-why-it-s-so-important-in-your-shell-scripts-2755  
+
+### Adding Comments to Bash Scripts
+
+Comments are one of the most important things to consider when you are writing your scripts.  
+Making sure that you add comments throughout your scripts is just one of many good practices you should be keeping, no matter which programming language your scripts are written in.
+
+Comments help you keep track of what your script is doing. They are useful because they allow you to leave internal notes throughout your script to remind you of things like what the next command will do or its expected output. You’re essentially annotating your scripts. 
+**Why do I need to add comments to my script, I already know what it’s doing?** 
+It’s not uncommon to write a script and then not come back to it for several months, at which point you will need to familiarize yourself with the code all over again. Comments simplify that process! 
+
+In Bash, we can identify comments using the # symbol. Every line that starts with the # sign is for our reference only. In Bash, anything after the # is not interpreted or executed. The only exception to this rule is the shebang which goes at the start of our script. 
+
+### Variables and Their Scope 
+Bash variables provide temporary storage for information. You can use them to store words/phrases (strings), decimals or integers.
+
+**Variables**
+To assign a variable, we use the **=** symbol:
+
+````
+name="Victoria"
+````
+
+BE CAREFUL! When you assign a value to a variable, there should not be any spaces on either side of the = symbol. 
+When we want to access a variable, we need to use the **$** symbol to reference it:
+````
+echo $name
+Victoria
+````
+
+Because our variables may contain whitespace which gets interpreted by bash, it’s good practice to wrap the variable name in curly brackets and encase it in double quotes:
+````
+echo "${name}"
+````
+
+We can add variables to our Bash scripts, for example:
+````
+#!/usr/bin/env bash
+name="Victoria"
+greeting="Good morning,"
+ 
+echo "${greeting} ${name}"
+````
+
+When you run this script, you should see:
+````
+Good morning, Victoria
+````
+
+In Bash, variables don’t have to be declared. What we mean by this is that if you try to access a variable that doesn’t exist, you won’t see an error, just a blank value.  
+For example, a script containing the following commands:
+````
+#!/usr/bin/env bash
+ 
+var2="foo"
+ 
+echo "Variable 1 value: ${var1}"
+echo "Variable 2 value: ${var2}"
+````
+
+Would return only the value of var2 because var1 had not been declared; Bash just ignored it.
+
+````
+Variable 1 value:
+Variable 2 value: foo
+````
+
+**Variable scope**
+There are two types of variable you need to be aware of:
+
+- Local variables
+- Global variables  
+
+**_Local variables_** 
+Local variables are only accessible within the section of code in which they are declared. For example, if we declare a variable inside our Bash script, it will not be accessible outside of that script.  
+Let’s reuse our earlier script:
+
+````
+#!/usr/bin/env bash
+ 
+var2="foo"
+ 
+echo "Variable 1 value: ${var1}"
+echo "Variable 2 value: ${var2}"
+````
+
+Now, we know when we run our script we can see the value of var2:
+````
+Variable 1 value:
+Variable 2 value: foo
+````
+
+However, what happens if we call var2 outside of the script, directly in our terminal?
+
+echo "Variable 2 value: ${var2}"
+This time we get:
+
+Variable 2 value:
+As you can see, the scope of our variable was constrained to the script itself and its value is not accessible outside of that script.
+
+The same principle is true for functions, which we will look at later in the week.
+
+**_Global variables_**
+
+In Week 1 we introduced you to global variables, also known as environment variables, that are available to all shells. You can recall global variables within your Bash scripts.
+
+Let’s print our current working directory by recalling the value of the global variable, PWD from within our script:
+
+#!/usr/bin/env bash
+ 
+echo "${PWD}"
+This will likely return a different path for you but, will look something like:
+
+/Users/tory
+You can create your own global variables by using the export command. First let’s declare a variable that contains our name:
+
+MY_NAME="Victoria"
+Next, let’s create a script that tries to access this variable:
+
+#!/usr/bin/env bash
+ 
+echo "My name is: ${MY_NAME}"
+If we were to run this script, we wouldn’t see our name as the MY_NAME variable we created was only a local variable and therefore not accessible within our script.
+
+My name is:
+However, if we use the export command, we can declare MY_NAME as a global variable which is accessible in our script:
+
+export MY_NAME="Victoria"
+Our script would then output: 
+```My name is: Victoria```  
+
+In Bash, we can identify comments using the # symbol. Every line that starts with the # sign is for our reference only. In Bash, anything after the # is not interpreted or executed. The only exception to this rule is the shebang which goes at the start of our script.   
+In Bash, we can identify comments using the # symbol. Every line that starts with the # sign is for our reference only. In Bash, anything after the # is not interpreted or executed. The only exception to this rule is the shebang which goes at the start of our script.   
+Otra nota para más detalles https://devconnected.com/set-environment-variable-bash-how-to/  
+
+### Bash Arrays 
+A variable holds a single value under a single name. By contrast, a Bash array can hold multiple values under a single name.
+
+You can initialise an array by assigning values that are separated by spaces in standard brackets.
+
+For example:
+
+array=("value 1" "value 2" "value 3")
+Remember, there should be no spaces on either side of the = symbol.
+
+Each value in an array is known as an element. Each element in an array is referenced by a numerical index. This index starts at 0.
+
+The syntax to access the first value in our array would be:
+
+echo "${array[0]}"
+Notice that the index (0) is encased in square brackets. This will return the first value in our array:
+
+value 1
+We can return all of the values in our array by using the @ symbol:
+
+echo "${array[@]}"
+value 1 value 2 value 3
+To count the number of elements in our array, we can prepend the array name with the # sign. In this case, we have 3 elements in our array:
+
+echo "${#array[@]}"
+3
+We’ll learn a little more about working with arrays later in the week when we discuss wrapping our code into reusable chunks known as functions.
+
+**Your task:**
+Write a Bash script in which you:
+
+Create an array called fruits which contains: pineapple, peach, raspberry, plum, apple and kiwi
+Output the number of elements in the fruit array
+Output the last element of the fruit array
+
+**Solution**
+````
+nano fruits.sh
+````
+
+````
+#!/usr/bin/env bash
+
+array=("pinapple" "peach" "raspberry" "plum" "apple" "kiwi")
+
+echo "There are ${#array[@]} fruits on the list."
+
+echo "The fruits are ${array[@]}."
+
+echo "The last fruit on the list is the ${array[5]} fruit"
+````
+To run script on terminal: ```bash array_fruits.sh```
+
+
+### User Input
+https://www.futurelearn.com/courses/linux-for-bioinformatics/3/steps/1339221  
+Here are the scripts used in this video:
+````
+whoami.sh
+````
+```
+#!/usr/bin/env bash
+echo "Please enter your name."
+read name
+echo "Hello ${name}, it’s nice to meet you!"
+```
+```
+food.sh
+```
+```
+#!/usr/bin/env bash
+echo "what are your two favourite foods?"
+read food1 food2
+echo "Your favourite foods are: ${food1} and ${food2}"
+```
+```
+login.sh
+```
+```
+#!/usr/bin/env bash
+read -p "Enter your username: " username
+read -sp "Tell me your password: " password
+echo -e "\nHi ${username}, your password is ${password}"
+```
+
+### Passing Command Line Arguments to Bash Scripts  
+A command line argument is a parameter that we can supply to our Bash script at execution. They allow a user to dynamically affect the actions your script will perform or the output it will generate.
+
+To pass an argument to your Bash script, your just need to write it after the name of your script:
+
+./fruit.sh my_argument
+In our Bash script, there are several reserved/pre-defined variables which we can use to recall the user-defined parameters. The first argument is stored in $1, the second in $2, the third in $3…and so on. We cannot use $0 as that references your Bash script itself.
+
+Let’s see how this works using an example script:
+````
+#!/usr/bin/env bash
+ 
+echo "The first fruit is: $1"
+echo "The second fruit is: $2"
+echo "The third fruit is: $3"
+````
+If we run our script and don’t give an argument, we will see no output for our pre-defined variables:
+````
+./fruit.sh
+The first fruit is:
+The second fruit is:
+The third fruit is:
+````
+Alternatively, if we provide three fruits, our script detects these and will return those values back to use via the pre-defined variables.
+````
+./fruit.sh apple pear orange
+The first fruit is: apple
+The second fruit is: pear
+The third fruit is: orange
+````
+Sometimes, we may want to access all of the arguments. We can do this using $@.
+
+Let’s update our example script to return all of the fruits provided as arguments to the script as well:
+````
+#!/usr/bin/env bash
+ 
+echo "The first fruit is: $1"
+echo "The second fruit is: $2"
+echo "The third fruit is: $3"
+echo "All fruits are: $@"
+````
+When we run our script, you can see that we now have an extra output which lists all of the fruits we gave to our script on the command line.
+
+````
+./fruit.sh apple pear orange
+The first fruit is: apple
+The second fruit is: pear
+The third fruit is: orange
+All fruits are: apple pear orange
+````
+Another example 
+````
+#!/usr/bin/env bash
+
+echo "The first fruit is: $1"
+echo "The second fruit is: $2"
+echo "The third fruit is: $3"
+echo "All fruits are: $@"
+echo "In total, there are ${#@} fruits altogether."
+````
+Result: 
+````
+The first fruit is: apple
+The second fruit is: pear
+The third fruit is: orange
+All fruits are: apple pear orange
+In total, there are 3 fruits altogether.
+````
+
+### If and If Else Statements 
+In this section, we’ll be looking at how to compare them to other variables or values and perform simple checks, like whether a file exists, using both conditional expressions and conditional statements.
+
+**IF statements**
+Conditional statements come in many forms. The most basic form essentially says: IF our conditions are met, THEN execute the following code.
+
+We can write our if statements in several ways:
+````
+if [[ condition ]]
+then
+    	command
+fi
+````
+So, if the expression within the square brackets returns true, then the code found between then and fi will be executed. If the expression returns false, the script will ignore (i.e. not execute) any code which lies between then and fi. Notice that we end our if statement with fi which is if spelt backwards.
+
+An alternative format that you might come across uses a ‘;’ to allow then to be on the same line as the conditional expression:
+````
+if [[ condition ]] ; then
+    	command
+fi
+````
+
+You’ll notice that in these examples, we’ve used spacing to indicate the code which will run if the conditional expression returned true. This is known as indenting and, although there are no requirements for it in Bash, it is a good coding practice to follow for clean, readable code.
+
+A simple example you can try on the command line yourself is:
+````
+if [[ 1 == 1 ]] ; then
+    	echo hi
+fi
+````
+Here we are saying, if 1 is equal to 1 (1 == 1) then return ‘hi’ back to us. As this conditional expression is always true (as 1 is 1) then, it will always return ‘hi’.
+
+**IF statements with AND/OR logic**
+We can use two (or more) conditional expressions with our if statement using the AND and/or OR conditions.
+
+For example, let’s say that we have a file and we want to check that it exists, is readable and that it isn’t empty. If our file meets these criteria, we want to print “File is good” and if not, print “File is bad”.
+
+First, let’s write our script:
+````
+#!/usr/bin/env bash
+ 
+# Set the path for our file
+file="file.txt"
+ 
+# Check whether file exists, is readable and has data
+if [[ -e ${file} ]] && [[ -r ${file} ]] && [[ -s ${file} ]]
+then
+    	# Execute this code if file meets those conditions
+    	echo "File is good"
+else
+    	# Execute this code if file does not meet those conditions
+    	echo "File is bad"
+fi
+````
+
+Now, let’s run our script knowing that our file can’t meet the criteria as it doesn’t exist:
+````
+./script.sh
+
+File is bad
+````
+
+Next, let’s create an empty file and try running our script again:
+````
+touch file.txt
+./script.sh
+````
+Again, our script returns “File is bad” as it hasn’t met all of our conditions. Finally, let’s add some data to our file and try again:
+````
+echo "hi" > file.txt
+./script.sh
+````
+Bingo! We have met all of the conditions and now our ````“File is good”````.
+
+**IF..ELSE statements**
+We can extend our conditional statement to have another clause by using an if..else statement. Here we are saying, IF our conditions are met, THEN execute the following commands. However, ELSE IF these conditions are not met, execute a different set of commands.
+
+The syntax for this looks like:
+````
+if [[ condition ]]
+then
+    	command1
+else
+    	command2
+fi
+````
+
+**IF..ELIF..ELSE statements**
+Sometimes, you may need to test more than one statement. The syntax for this looks like:
+````
+if [[ condition1 ]]
+then
+    	command1
+elif [[ condition2 ]]
+then
+    	command2
+else
+    	command3
+fi
+````
+It’s worth mentioning that you can have more than one elif clause in your if..elif..else statement. But, as we will soon discuss, there are more efficient ways of building that type of conditional statement.
+
+**An example:**
+```
+#!/usr/bin/env bash
+
+temperature=$1
+
+min_temperature=10
+
+max_temperature=30
+
+if [[ ${temperature} -gt ${max_temperature} ]]
+
+then
+
+echo "Too hot"
+
+elif [[ ${temperature} -gt ${min_temperature} ]] && [[ ${temperature} -lt ${max_temperature} ]]
+
+then
+
+echo "Just right"
+
+else
+
+echo "Too cold"
+
+fi
+```
 
 
