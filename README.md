@@ -858,3 +858,520 @@ fi
 ```
 
 
+### Conditional expressions
+### Switch Case Statements
+### Exercise and discuss
+For this exercise you will need to download the Diamonds.csv file. This file is part of the data that you downloaded in week 1 Step 1.6 of this course. Please note the data file is in Week 1 folder.
+
+Here is an excerpt from the Diamonds.csv file you’ll be parsing in this exercise.
+
+excerpt from the diamonds.csv file----pick
+
+For this exercise, what we’d like you to do is create an interactive Bash script called diamonds.sh.
+
+First, prompt the user to provide a cut and store their response in a variable called quality.
+
+If the user enters either Fair or Good, return Insufficient quality to proceed.
+
+If the user enters a value other than Premium, Ideal or Very Good, return Invalid cut.
+
+Otherwise, count the number of diamonds (rows) which have the user-defined cut. Hint: look at the usage for grep to find an option that will count the number of lines which match a given pattern.
+
+#### Solution:
+````
+#!/usr/bin/env bash
+# Store the first command line argument as a variable
+read -p "Please enter a diamond cut: " quality
+# If quality is Fair or Good – return insufficient quality
+if [[ ${quality} == "Fair" ]] || [[ ${quality} == "Good" ]]
+then
+ echo "Insufficient quality to proceed"
+elif [[ ${quality} != "Ideal" ]] && [[ ${quality} != "Very Good" ]] && [[ ${quality} != "Premium"
+]]
+then
+ # If the cut is not a valid value
+ echo "Invalid cut"
+else
+ # Using the -c option from grep to count
+ grep -c "${quality}" Diamonds.csv
+fi
+````
+Let's check each of the conditions.  
+(1) If a user enters Fair or Good, return Insufficient quality to proceed.
+```
+./diamonds.sh
+Please enter a diamond cut: Fair
+Insufficient quality to proceed
+```
+Next, let's check that if we enter a value other than Premium, Ideal or Very Good, the script returns Invalid cut.
+````
+./diamonds.sh
+Please enter a diamond cut: Blargh
+Invalid cut
+````
+
+Finally, let's see how many diamonds there are which are a Premium cut
+````
+./diamonds.sh
+Please enter a diamond cut: Premium
+13791
+````
+
+### Practice Bash Syntax
+1.- Which of these is the correct syntax for an if statement? 
+do 
+**then** 
+esac 
+elf 
+2.- Which of the following is the correct conditional syntax? 
+elsif 
+**elif** 
+elseif 
+ifelse 
+3.- Which of these variables holds the first command line argument? 
+$0 
+**$1** 
+$-1 
+$@ 
+
+
+## Control flow in bash and Bash functions
+### For Loops
+
+What is a loop? A loop is a construct which allows you to repeatedly execute the same commands. We will be discussing three types of loops: for loops, while loops and until loops. 
+Let’s start by looking at for loops. The basic syntax for a for loop is:
+```
+for variable in ${list}
+do
+    	# Execute some commands
+done
+```
+We can define a list like so:
+```
+my_list="item1 item2 item3"
+```
+As a simple example, let’s create a list of fruits and use a for loop to return each item from our list:
+```
+fruits="apples pears oranges"
+for fruit in ${fruits}
+do
+    	echo ${fruit}
+done
+```
+This will output:
+```
+apples
+pears
+oranges
+```
+We can also use a for loop to iterate over a series of numbers. In this example, we’ll process the numbers 1 – 3 using a sequence expression. Here, you’ll see the range is specified by a beginning number (1) and an ending number (3) separated by ‘..’. This indicates that we want the sequence of numbers from the beginning to the ending number inclusive i.e. 1, 2 and 3.
+```
+for n in {1..3}
+do
+    	echo ${n}
+done
+```
+This will output:
+```
+1
+2
+3
+```
+A common use of for loops is to iterate over the contents of a directory. Here is an example of how to list all files in the current directory:
+```
+for file in *
+do
+    	echo ${file}
+done
+```
+Here we use ‘*’ as a wildcard to ask for all files and directories. We could extend this to look text files:
+```
+for file in *.txt
+do
+    	echo ${file}
+done
+```
+This would return only those files that have a .txt file extension. 
+
+Finally, we’ll introduce you to the for loop syntax that uses three expressions: an initial value, a terminal value and an increment/decrement. Notice here that the increment uses the ‘++’ notation which simply means add 1.
+```
+for (( i=1; i<=3; i++ ))
+do
+    	echo $i
+done
+```
+This example returns the same output as our earlier number series.
+```
+1
+2
+3
+```
+##### Exercise:
+Create a for loop which iterates from 1 to 5 in increments of 1. If the value is 2 return “fizz” otherwise, return “buzz”.
+##### Solution:
+```
+#!/usr/bin/env bash
+
+for (( i=1; i<=5; i++ ))
+do
+echo $i
+if [[ $i -eq 2 ]]; then
+echo "fizz"
+else
+echo "buzz"
+fi
+done
+```
+
+```
+for (( i=1; i<=5; i++ ))
+do
+ if [[ $i -ne 2 ]]
+ then
+ echo "buzz"
+ else
+ echo "fizz"
+ fi
+done
+```
+
+```
+#The trick here is to remember that because we are comparing a number, we need to use -eq or -ne in our condition.
+for (( i=1; i<=5; i++ ))
+do
+ if [[ $i -eq 2 ]]
+ then
+ echo "fizz"
+ else
+ echo "buzz"
+ fi
+done
+```
+
+#### While Loop and Until Loop
+
+Both for loops and while loops are very similar. Typically, we use for loops where we know exactly how many iterations we need – i.e. they have a definitive start and end point. On the other hand, while loops are used where we don’t know the limitations on tasks such as read in a file or asking a user for input. They just keep iterating as long as the specified condition has been met. 
+
+The basic syntax for a while loop looks like this: 
+```
+while [condition]
+do
+    	# Commands to run
+done
+```
+First, let’s look at how not to do a while loop: 
+```
+i=1
+while [[ $i -eq 1 ]]
+do
+    	echo "hi"
+done
+```
+This is what’s known as an infinite loop because the condition will always return true – i.e. nothing is changing. In this example, “hi” will just keep being printed to the terminal until we force it to stop using Ctrl+C on our keyboard. 
+
+So, that was how to use while loops in the wrong way. But, what do they look like when they are being used properly: 
+```
+i=1
+while [[ $i -le 3 ]]
+do
+   echo "$i"
+   (( i++ ))
+done
+```
+What we’re doing here is setting our variable to have an initial value of 1. When the loop begins, our variable is 1 (i.e. less than 3) and so the condition returns true. That means that we’re going to execute the code body, returning our variable value, 1 to the terminal. Next, we increment our variable value from 1 to 2 using the ++ notation. This continues while our variable has a value less than or equal to 3. 
+
+The result: 
+```
+1
+2
+3
+```
+Another common use for while loops is reading in the contents of a file. Here is an example: 
+```
+while read data
+do
+   echo "${data}"
+done < infile.txt
+```
+This is what is known as a while loop. What do we mean by this? In this example, the while loop will only keep iterating while there are lines to be read from the given input file. Here, infile.txt is the name of the file that we are going to be looping over. The read command will process the file, line by line, into the data variable. Once it reaches the end of the file, the while loop will be terminated. 
+
+#### Until loop 
+We just looked at an example of a while loop. Now, we’re going to look at run-until loops. The main difference is that while loops are designed to run while a condition is satisfied and then terminate once that condition returns false. On the other hand, until loops are designed to run while the condition returns false and only terminate when the condition returns true. 
+
+The structure of until loops is almost identical to that of a while loop: 
+```
+until [condition]
+do
+    	# Commands to run
+done
+```
+For example, this loop would run until the variable is greater than 3:
+```
+i=1
+until [[ $i -gt 3 ]]
+do
+    	echo $i
+    	((i++))
+done
+```
+This would output:
+```
+1
+2
+3
+```
+
+#### Bash Functions
+When you’re writing Bash scripts, you’ll often find that there are repetitive tasks. Instead of copying and pasting the same code to multiple places in your scripts, try using a function. 
+
+Functions are a great way of producing reusable code! They are essentially a set of commands that can be called as many times as you need in your script. What’s even better is that functions are not unique to Bash, they’re a core component of many other programming languages too. 
+
+Bash function syntax is pretty straightforward. We start off by defining the function name, followed by parentheses. The commands that we want to execute are found between the curly brackets and are known as the body of the function. 
+
+```
+function my_function() {
+    	#some code
+}
+```
+There is an alternative syntax where you don’t have to prefix that first line with function:
+```
+my_function() {
+    	#some code
+}
+```
+However, it is much easier to pick out our functions if we use the previous syntax. It’s also a good idea to make sure that the names of your functions are relative and descriptive so that you can quickly see what they’re going to do. 
+
+When we define a function, we are not executing it. Let’s use a simple toy example to demonstrate where we are using a function to return “Hello world” back to the terminal. We’ll call our function say_hello. You can see that we don’t execute the code in the function body until we specifically call (or execute) the function with say_hello. 
+```
+#!/usr/bin/env bash
+ 
+# Define a function to print "hello world"
+function say_hello() {
+    	echo "Hello world"
+}
+ 
+# Execute the say_hello function
+say_hello
+```
+This would output:
+```
+Hello world
+```
+We can adapt out function to take arguments using reserved variables. To access the first argument given to the function, we use the variable $1. Let’s tweak our script to use an argument, our name, that is provided to our say_hello function. 
+```
+#!/usr/bin/env bash
+ 
+# Define a function to print "hello world"
+function say_hello() {
+    	echo "Hello $1"
+}
+ 
+# Execute the say_hello function
+say_hello "Victoria"
+```
+This would output:
+```
+Hello Victoria
+```
+Functions are one of the best ways to produce scalable and readable code. One general rule of thumb is not to make your functions too big. You can call a function within a function, so, break each function down into small, clear tasks. 
+
+##### Exercise 
+Create a function called file_exists taking the first argument (a filename) which it uses to see if the file exists. If it doesn’t, return “File does not exist: “, followed by the filename. 
+
+Note: you can use the “!” notation when you want to check a negative. 
+
+If file exists: 
+
+if [[ -e $1 ]] 
+
+If file does not exist: 
+
+if [[ ! -e $1 ]] 
+
+##### Solution
+
+An example Bash script to solve this would be: 
+```
+#!/usr/bin/env bash
+file="no_file.txt"
+function file_exists() {
+ if [[ ! -e $1 ]]
+ then
+ echo "File does not exist: $1"
+ fi
+}
+file_exists "${file}"
+# Notice that we are checking to see that a file doesn't exist, not that it does.
+# if [[ ! -e $1 ]]
+```
+Another solution: 
+```
+nano check.sh
+
+#!/usr/bin/env bash
+
+file=$1
+
+function is_this_real(){
+
+if [[ -e $1 ]]
+
+then echo "It's real"
+
+else echo "It's not real"
+
+fi
+
+}
+
+is_this_real ${file}
+```
+EXIT NANO
+```
+chmod +x check.sh
+```
+```
+./check.sh fruit.txt
+```
+
+### Writing Bash scripts - Good practices 
+#### Track the Progress of Your Script and Redirect Script Outputs and Errors 
+**Tracking the progress of your script** 
+Now, let us imagine you have a long and complex Bash script. You execute your script, it’s started running and you’ve gone off to make a cup of tea. Ten minutes later, you come back to check on its progress but, how do you know what’s going on and where you’ve gotten up to in your script? 
+
+There are many different ways in which we can track the progress of our scripts. The simplest is to break your script down into sections and output a progress statement when you start and/or finish each section. 
+
+For example, let’s set our name as a variable and count the number of characters it contains. 
+```
+#!/usr/bin/env bash
+ 
+# Set your name as a variable
+name="Victoria"
+ 
+echo "Counting number of characters in name"
+printf -- "${name}" | wc -m
+```
+As expected, we have our progress statement and the number of characters in our name:
+```
+Counting number of characters in name
+            8
+```
+Now, while this may seem excessive given the simple example, it’s clear that once we start to build up our scripts, adding progress statements will be invaluable. Particularly when were discussing loops this week, where it’s possible for your scripts to get stuck in an infinite loop, failing to exit. In those situations, progress statements are absolutely essential for debugging! 
+**Redirecting script outputs and errors** 
+Despite your hardest efforts, sometimes your Bash scripts will do unexpected things. This is when we need to debug. If you have a long Bash script, it can be tricky to work out where things went wrong. 
+
+To help with debugging, we can output progress statements at key points in our code e.g. “Reading in file: x”. However, these can easily fill up your terminal and become difficult to follow. A simple solution is to write these progress statements to one or more log files. 
+
+**Redirecting the output of scripts and commands to files** 
+Simply put, redirection is the mechanism by which we can send the output of a command or script to another place. When we want to capture the output from a command or script, we usually choose to redirect those outputs into a file.  
+
+To redirect the outputs of a script, we can use the > symbol: 
+```
+script.sh > output.txt
+```
+Redirection using the > symbol works not only for scripts, but any Bash command:
+```
+echo "hello world" > hello.txt
+cat hello.txt
+hello world
+```
+
+**Linux streams and file descriptors** 
+Before we take an in depth look at how we redirect our outputs and errors to log files, we first need a crash course in Linux streams and file descriptors. These streams are handled like files – i.e. you can read from them and you can write to them. 
+
+There are three streams you should be aware of: 
+ 
+stdin (standard input) 
+stdout (standard output)  
+stderr (standard error) 
+
+This sounds much more complicated than it really is. In a nutshell, stdout refers to the output from a command and stderr refers to the errors a command generates. The final stream, stdin refers to command line inputs which we’ll cover later in the week. 
+
+Next, we need to understand file descriptors. A file descriptor is just a (positive) integer that represents an open file. Each of our Linux streams (i.e. stdin, stdout and stderr) has been allocated a unique number in order to identify them. 
+
+All you need to remember is which of the ids below corresponds to each of the streams: 
+
+0 => stdin 
+ 
+1 => stdout 
+ 
+2 => stderr 
+ 
+**I/O redirection** 
+To start understanding how these streams work, let’s look at redirecting the output from a script into a single file. 
+ 
+Example script: 
+```
+#!/usr/bin/env bash
+ 
+# A script that tries to change directory
+ 
+echo "Changing to a directory that doesn't exist"
+cd foo
+```
+As you can see, our script returns the printed progress statement and an error that tells us that the directory we’re trying to migrate to doesn’t exist on our filesystem. 
+```
+./script.sh
+Changing to a directory that doesn't exist
+script.sh: line 6: cd: foo: No such file or directory
+```
+These two messages are being delivered to the terminal by two different Linux streams. The first message, our progress statement, is delivered via stdout. Meanwhile, the error message is delivered via stderr. 
+
+Now, let’s see what happens when we try to redirect the outputs from that script into a file called output.txt: 
+```
+./script.sh > output.txt
+./script.sh: line 6: cd: foo: No such file or directory
+```
+OK, so, we can see that the stdout has been redirected to our output file but, the error is still being displayed.
+```
+cat output.txt
+Changing to a directory that doesn't exist
+```
+Why is this? Well, when we use > to redirect to a file, by default, the system will only redirect the stdout. 
+
+But, what about our errors being delivered via stderr, how can we capture those? 
+
+To simplify things, let’s first look at how to redirect stdout and stderr to two different files. We’ll use the > symbol with our file descriptors (1 for stdout and 2 for stderr) to redirect our outputs to output.txt and our errors to error.txt respectively.  
+```
+./script.sh 1>output.txt 2>error.txt
+```
+This command returns nothing back to our terminal. Using the cat command, we can see that, as expected, our outputs and errors have been written to output.txt and error.txt respectively. 
+ 
+Our stdout (progress statement returned using echo): ```cat output.txt Changing to a directory that doesn’t exist ```
+
+And our stderr (errors):
+```
+cat error.txt
+./script.sh: line 6: cd: foo: No such file or directory
+```
+In order to redirect the stdout and the stderr to the same place, we need to use a new term: 2>&1. When we use this, we redirect using the same syntax as before, but add 2>&1 to the end of our command. 
+
+This is how it works in practice: 
+```
+./script.sh > combined_output.txt 2>&1
+```
+Now, if we look at our combined output file, we can see that we’ve captured both the stdout and the stderr. 
+```
+cat combined_output.txt
+Changing to a directory that doesn't exist
+./script.sh: line 6: cd: foo: No such file or directory
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
