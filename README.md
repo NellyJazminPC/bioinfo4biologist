@@ -1357,10 +1357,307 @@ Changing to a directory that doesn't exist
 ./script.sh: line 6: cd: foo: No such file or directory
 ```
 
+#### Writing Robust Bash Scripts
+
+Sometimes, despite having the very best intentions, subtle issues can creep into your script causing it to fail with unintended consequences. Fortunately, there are commands available to help with minimising these issues. One of these is the set command. 
+
+Let’s take a look at how the set command can help us write robust and secure Bash scripts. 
+
+First, how does the set command work? Using the set command allows us to customise the environment in which our scripts are run. 
+
+The general syntax for the set command is: 
+ 
+```set [options]```
+There are more than a dozen options available for the set command. To view them, you can run the following command: 
+
+```help set``` 
+In this article, we’ll be focusing on the most commonly used options. 
+
+**Using set -e to catch errors** 
+Sometimes, commands within your script may fail but, the downstream commands will continue to run. This can be extremely frustrating if you don’t see the error and assume that, as the script completed, everything has worked as expected. 
+
+Here’s an example. First, we will try to change into a directory called foo and then list the contents of that foo directory. The key here is that the foo directory doesn’t actually exist so, we can’t get its contents. 
+```
+#!/usr/bin/env bash
+ 
+cd foo
+ls
+``` 
+What happens when we run our script? 
+```
+script.sh: line 3: cd: foo: No such file or directory 
+File1 File2
+```
+Notice that our script generated an error when the system couldn’t find our foo directory. But, because there wasn’t an exit code, the remaining commands in the script also ran. Unfortunately, this listed the contents of our current working directory and not the foo directory as intended. Imagine if this was part of a long series of output commands and we missed the error….we may accidentally assume that our script ran correctly! 
+
+Fortunately, the set -e command comes to our rescue by ensuring that the script will fail whenever an error occurs, no matter the exit code. Try adding set -e to the top of your script: 
+```
+#!/usr/bin/env bash
+ 
+set -e
+ 
+cd foo
+ls
+```
+Bingo! This time, we can see that the script terminates as soon as it reaches the first error.
+```
+script.sh: line 5: cd:foo: No such file or directory
+```
+**Using set -u to catch variables that don’t exist** 
+By default, when executing a script, Bash will just ignore variables which don’t exist. In most cases, you won’t want this behaviour as it can have unexpected consequences! 
+
+In this example, we will first try to output a variable, $foo, which doesn’t exist and then try to output a simple string, bar. 
+```
+#!/usr/bin/env bash
+ 
+echo $foo
+echo bar
+``` 
+When we run this script, we get the following output: 
+```
+bar
+```
+Notice that the system outputs a blank line for echo $foo. This is because Bash is ignoring $foo as it doesn’t exist. 
+
+If we want the script to exit with an error instead of continuing on silently, we can add the set -u command at the top of our script. 
+```
+#!/usr/bin/env bash
+ 
+set -u
+ 
+echo $foo
+echo bar
+```
+This will result in our script exiting with the following error: 
+```
+script.sh: line 6:foo: unbound variable
+```
+Notice, our script terminates before running the second echo command. 
+
+**Displaying executed commands while script is running with set -x** 
+Another default Bash behaviour is to only display results once a script has finished. This can be especially frustrating when you need to debug scripts that take a long time to run. 
+
+Let’s take an example script that outputs two simple strings, foo and bar. 
+```
+#!/usr/bin/env bash
+ 
+echo foo
+echo bar
+```
+The output from this script would be:
+```
+foo
+bar
+```
+Now, what if we want to know which command is producing each of the results? To find this out, we can use the set -x command which outputs the executed command before printing the command result. 
+```
+#!/usr/bin/env bash
+ 
+set -x
+ 
+echo foo
+echo bar
+```
+Running this script would give the following output: 
+```
++ echo foo
+foo
++ echo bar
+bar
+```
+As you can see, before executing each of the echo commands, the script first prints the command to the terminal, using a + to indicate that the output is a command. This can be especially handy when you want to debug long scripts.
+
+**Combining set options in a single command** 
+Most of the time, you will want to use all of these options together. Instead of writing the commands out, one command per line, we can combine the options into a single command: 
+```
+set -eux
+```
+Using the set command is essential to building robust Bash scripts. Not only is it part of good scripting practices but, will also save you a lot of time and frustration! 
+
+#### Good Practices
+**For the most part, it’s easy to write Bash scripts. What’s really tricky is writing good Bash scripts.** 
+
+What do we mean by this? In short, we mean writing “clean code”. Clean code is: 
+
+- Easy for someone to pick up and understand
+- Reusable
+- Scalable
+- Expects the unexpected
+
+There will always be situations where you write a script for a one-time only task. In these situations, people tend to cut corners and become more flexible with making a script scalable or reusable. It’s tempting, it is, we’ve all been there. But…inevitably, you’ll almost always need to do the same or similar task unexpectedly in the future. It takes time to write good code in all situations, but, I promise, it’s always worth it in the long run! 
+
+Here we’ve put together a simple list of 12 good practices which you can try to follow. This is by no means an exhaustive list and I encourage you to read more widely and continually assess and develop your scripting practices. 
+
+1. **Plan ahead** 
+Most of your scripting headaches will be solved by planning ahead. Think about what you want your script to do and expect the unexpected. This means not only thinking about the “happy path” where everything proceeds as you expect it to, but also the exceptions. For example, what should it do if the file its processing is empty or doesn’t exist? 
+
+2. **Build your script in small steps** 
+
+Depending on the complexity of the task you’re trying to accomplish, your script may be very small or somewhat larger. Now, even for the most experienced of script writers, there can be a typo or other error in their first attempt. To avoid this, no matter the scale of your script, build it up in small stages and test as you go. 
+
+3. **Scale up slowly** 
+
+We don’t just need to consider building the process up step by step, but also the size of the data the script is handling. A simple rule of thumb is to get your script working for a single task first. Then, build up slowly until you reach the full scale of your dataset i.e. handle one file, then 10, then 100… This allows you to predict the resources you need to process the full dataset and get a rough idea of how long this process will take. 
+
+4. **Comment, comment, comment** 
+
+OK, I could start by saying that you can never have too many comments in a script. But, that’s not true, at some point you won’t be able to see the wood for the trees and your script will become unnecessarily bloated. There is no hard and fast rule on how many comments you should have in your scripts, it just comes down to common sense. Simply, make sure that you have enough information so that if someone, usually you, picks your script up in 6 months that they know what it does and have a rough idea of how it does it. This isn’t just true for shell scripting, but for almost every other type of programmatic scripting you may encounter. 
+
+5. **Don’t prolong the life of the script unnecessarily** 
+
+This is called script longevity and links back to expecting the unexpected. Earlier in the week we looked at using the set command to handle failures and errors. A script should never fall over quietly. Trigger an exit signal when the unexpected happens. This means that a script should exit on the first error and not blithely continue running unnecessarily or fall over without you realising it. 
+
+6. **Keep on top of variable management** 
+
+There are a lot of things to consider for variable management. First up is syntax. I like to use upper case for environment variables and lower case for local variables. 
+```
+MY_ENVIRONMENT_VARIABLE=1
+my_local_variable=2
+```
+Depending on your preference you can use underscores or camel case. I prefer underscores as it keeps things consistent between variable types. But that’s up to you. 
+```
+my_underscore_example=1
+myCamelCaseExample=2
+```
+Variable names should be meaningful – i.e. you should know straight away what they are referring to. And, as mentioned earlier in the week, use double quotes and curly braces to avoid issues with whitespace and wildcards in the variable value. 
+
+7. **Prevent code bloat by using functions** 
+
+Quite often you will want to repeat the same process multiple times within a script. We could just copy and paste the code, amending it to our needs. This is inefficient and will make for a longer script. Instead, we can wrap the code in a function so that the code we want to run is only located once in our script and is referenced using a function call anywhere it is needed. Like variables, functions should be meaningfully named. They should be small, only performing a limited, clear task. 
+
+8. **Don’t duplicate scripts** 
+
+It can be very tempting to put paths to data directly into your scripts. Then, when you come to use the script on the new dataset, copy the script, save it under a new name and update the dataset location to point at the new data. Please don’t do this. It’s worth investing the time in making your scripts reusable and scalable by using arguments and avoiding hard coded paths. 
+
+[!](https://imgs.xkcd.com/comics/documents.png)
+Source: https://imgs.xkcd.com/comics/documents.png  
+cartoon depicting one person at the computer and another looking at that Pearson's screen over her/his shoulder saying oh my god, with a tip: never look at somebody else's computer  
 
 
+9. **Keep debugging simple**  
 
+Scripts will fail, it’s inevitable. We’ve already mentioned expecting the unexpected, but what should you do when the unexpected actually happens? How do you know at what point your script failed? This is where logging comes in – print everything your script is doing back to the system. That way, when it fails, you know at which point it stopped working and will have a much easier time debugging the code. 
 
+10. **Clean up after yourself** 
+
+This is simple. If you generate intermediate or temporary files, make sure that you remove them when you’ve finished with them. This should be built into the script itself and not done an afterthought once it’s run. 
+
+11. **Make your code easy to read** 
+
+Digestible code is always easier to work with and maintain. To quote Martin Fowler: “Any fool can write code that a computer can understand. Good programmers write code that humans can understand.”. To help, you can use linters to look over your scripts and give feedback on their readability/formatting. One of the widely used online tools for Bash script linting is https://www.shellcheck.net/. 
+
+12. **Don’t walk away from new scripts** 
+
+It’s oh so tempting to hit “go”, set your nice, shiny new script running…then go off and make a cup of tea. Don’t. Sit back down and make sure it runs OK for the first couple of times. Why the first couple and not just the first time I hear you ask? Because, it will inevitably be the third or fourth time you run the script that it will fail in a spectacularly dramatic fashion. I like a cup of tea as much as the next person but, please, make it before you start running your script! 
+
+**Most of important of all, don’t be afraid to ask for help!** 
+
+#### Final Exercise - Use Bash Scripting to Parse Biological Data 
+
+In this exercise we’re going to look at using Bash scripts to parse biological data. We’ll walk you through and explain the commands for parsing a single data file. Then, it will be up to you to write a Bash script to process all of the example data files. 
+
+**Example dataset** 
+The example files contain a subset of data from the 1000 Genomes project (https://www.internationalgenome.org/). Don’t worry if you don’t have a biological background. We’re not going to delve into the formats here. The aim of this exercise is simply to run a program across three example data files to get the number of records it contains using the skills you’ve been developing in Week 1 and Week2. 
+
+You should now have three data files: 
+
+- sample_10000_11000.bam 
+
+- sample_11000_12000.bam 
+
+- sample_12000_13000.bam 
+
+If you would like to know how we generated this subset of the full data, you can download the Bash script from the same link above. We’ve put comments in the script to help you follow along.  
+
+Each line in our sample data files is a biological unit of data known as an alignment. All we want to know is how many records (alignments) are in each of the data files. 
+
+But, the catch here is that these files are not in a human readable format. This means we need to use a program, like samtools, to process them if we want to know the number of records (alignments) each file contains. 
+
+Counting the number of alignments (amount of data) in a single file 
+
+In Week 1, we looked at how to install a widely used piece of software called samtools (https://github.com/samtools/samtools) - a suite of tools which can be used to process biological sequence data. For today’s example we are going to use one of those tools, samtools view, to get a summary of the data in our sample files. 
+
+Run the following command to get the usage (manual) for this tool: 
+```
+samtools view
+```
+> in MacOs there was a problem with the installation, but when we need Samtools it's necessary to put in the terminal **conda activate samtools**
+
+Here in the usage, we find the option, -c, which can tell us the number of records (alignments) in our data file.
+```
+Usage: samtools view [options] || [region ...]
+
+Options:
+
+  -b   	output BAM
+  -C   	output CRAM (requires -T)
+  -1   	use fast BAM compression (implies -b)
+  -u   	uncompressed BAM output (implies -b)
+  -h   	include header in SAM output
+  -H   	print SAM header only (no alignments)
+  -c   	print only the count of matching records
+  ```
+From that usage, we can see the command syntax is: 
+```
+samtools view [options] <filename>
+```
+So, to get the number of records (alignments) in our first file (sample_10000_11000.bam), we would run the following command: 
+```
+samtools view -c sample_10000_11000.bam
+```
+This will return the number of records (alignments):
+```
+1947
+```
+We can store the output of a command as a variable using the following syntax:
+```
+variable=$(command)
+```
+
+So, for our example command this would be: 
+```
+alignments=$(samtools view -c sample_10000_11000.bam)
+```
+Now, if we echo our variable, you will see it has the expected value: 
+```
+echo ${alignments}
+1947
+```
+**Excercise:** 
+
+Using a Bash script, get the number of records for each of the three example data files. 
+
+Some hints: 
+
+- Use comments
+- Use the set command
+- Check whether each file is empty before running samtools
+- Use a loop – i.e. don’t run three samtools commands with hardcoded filenames, use wildcards (e.g. sample*.bam where * matches any string)
+- Return the filename and the number of records back to the user 
+
+**Solution:** 
+```bash
+#!/usr/bin/env bash
+set -eu
+# Use a for loop to iterate
+for filename in sample*.bam;
+do
+  # Useful message so we know where we're up to
+  echo "Processing: ${filename}"
+  # Count the number of records using samtools view
+  # Store the output from that command into a variable
+  alignments=$(samtools view -c "${filename}")
+  # Return the filename and the number of records back to the user
+  echo "Number of alignments in ${filename}: ${alignments}";
+done
+```
+
+#### Summary and Help area for Week 2 
+In Week 2, we built on the commands you learnt in Week 1 and introduced you to bash scripting. As the week progressed, we looked at why using bash scripts is such a powerful means of automating repetitive commands. 
+
+We’ walked you through writing your very own first bash script to print “Hello World”, and from there, you read about basic bash syntax in the form of variables, conditional logic and functions. Most importantly, you started to put your individual commands together to form simple bash scripts. 
+
+You also heard some advice from a professional bioinformatician. You had an opportunity to see how Samtools, you installed in week 1 can be used in practice. 
 
 
 
