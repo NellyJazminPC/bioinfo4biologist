@@ -1527,7 +1527,783 @@ Here are explanations of some of these layers :
 
 ![image](https://user-images.githubusercontent.com/25624961/167989055-89f5ebce-c2b4-47f4-a9fb-48519dbbca7e.png)
 
-### Data Visualisation with ggplot2 - Setting Data, Aesthetics and Geometries 
+### Data Visualisation with ggplot2 - Setting Data, Aesthetics and Geometries  
+
+
+Let’s load our data set of interest, install and load all the packages we need, and start making data visualizations in RStudio. 
+
+**Good practice** 
+
+A good practice is to load the packages you need before starting your analysis. It is also recommended to write the packages you need in the script you prepare for a project. This is a list of convenient packages to use with ggplot2 
+
+A good practice is to load the packages you need before starting your analysis. It is also recommended to write the packages you need in the script you prepare for a project. This is a list of convenient packages to use with ggplot2 
+
+```R
+> library(ggplot2)
+> library(RColorBrewer)
+> install.packages("viridis")
+> library(viridis)
+```
+
+**Note.** Another widely used package in data science is called tidyverse, and is a collection of packages including ggplot2, dplyr and many other helpful resources. It can be worth trying to use it on your own after this course. 
+
+**Setting your working directory in RStudio** 
+
+**Step 1.** We recommend you to work in the Project folder Project_Test that we created previously, either by clicking directly on the Project_Test or using the following command 
+
+```bash
+> setwd("/Users/imac/Desktop/exerciseR/Project_Test")
+> getwd()
+[1] "/Users/imac/Desktop/exerciseR/Project_Test"
+```
+
+**Step 2.** As a reminder, you can create a specific script file to write your commands and related comments. 
+
+**Setting your data** 
+
+**Step 1.** Import or load the iris dataset we want you to work on in RStudio. All options are identically accessed in R, but the two final options are particular to RStudio. 
+
+
+From your computer, if you placed the iris dataset file in your working directory 
+
+```R
+> Iris <- read.table("iris.txt")
+```
+
+From your computer, if the iris dataset file is in the parent folder exerciseR 
+
+```R
+> Iris <- read.table("/Users/imac/Desktop/exerciseR/iris.txt")
+```
+
+From the available data sets in R 
+
+```R
+> data(iris)
+```
+
+- From the “Import Dataset” tab in the Environment, by selecting the correct file with its type and parent folder.
+- From the File menu, by choosing the “Import Dataset” option.
+
+**Note 1.** Be careful to choose the “iris” dataset as “Iris” would here correspond to the same data set but with changes that could impede the rest of the commands. 
+
+**Note 2.** As other functions in R, the “read.table()” function has different options that you can view in the following link, which also shows you other functions used to import data from other file formats (for example with the “read.csv()” function to read “.csv” files). https://www.rdocumentation.org/packages/utils/versions/3.6.2/topics/read.table. 
+
+
+**Step 2.** You can also display and work on specific data chosen from the iris data set 
+
+```R
+> iris_length <- iris %>% select(Sepal.Length, Petal.Length)
+> head(iris_length)
+  Sepal.Length Petal.Length
+1          5.1          1.4
+2          4.9          1.4
+3          4.7          1.3
+4          4.6          1.5
+5          5.0          1.4
+6          5.4          1.7 
+```
+
+**Setting Aesthetics and Geometries** 
+
+**Step 1.** Let’s use basic layers to plot Petal.Length vs. Sepal.Length. With ggplot2, “aes()” specifies aesthetics for x and y-axis, and “geom_point()” generates a scatterplot 
+
+```R
+> ggplot(data = iris,aes(x = Sepal.Length, y = Petal.Length)) + 
+geom_point()
+```
+
+**Note 1.** Here is an example of how you should see the output in your “Plots” area in RStudio. Note that you have the possibility to save your plot using the “Export” button, with options related to file formats. Other R options we saw for saving plots remain possible. 
+
+
+**Note 2.** We will not show the whole area again, but remember that the plots you generate will appear here. 
+
+
+**Step 2.** Using the same previous plot options, let’s color the points according to the Species 
+
+```R
+> ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length, color = Species)) + geom_point()
+```
+![image](https://user-images.githubusercontent.com/25624961/168719448-c0a6ccaa-5346-489e-ba86-9399641e0096.png) 
+
+
+**Step 3.** There are other possible shorter ways for generating this same output 
+
+```R
+> ggplot(iris, aes(Sepal.Length, Petal.Length, color = Species)) + 
+geom_point()
+``` 
+
+**Note.** However, for the sake of clarity, we will mainly keep the full details such when using data, x and y to ease the understanding 
+
+![image](https://user-images.githubusercontent.com/25624961/168719509-626abf34-eb08-4ab5-9e69-29de8b814cf9.png)
+
+
+**Step 4.** It is possible to create a variable with your base aesthetics and then simply call it to apply other layers. The following will create the same output as the previous graph  
+
+```R
+> key <- ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length, , 
+color = Species))
+> key + geom_point()
+```
+
+**Step 5.** Different geometries can also be used to complement each other. Here “geom_smooth()” adds a trend line and area to the points 
+
+```R
+> key + geom_point() + geom_smooth()
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168719594-9fc51a8a-6e2d-4e90-9da8-c77ef95ed9a1.png)
+
+
+**Step 6.** You should have noticed how geometries are here added with default options. Each has a set of options, such as removing the trend area in the following with se=FALSE 
+
+```R
+> key + geom_point() + geom_smooth(se=FALSE)
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168719671-3656064d-dd77-4dd8-a142-3b3750ec11e0.png)
+
+
+**Step 7.** You can easily change the points size, shape and colour from “geom_point()” options, but see how it affects the display: if you force one colour, you will not have any more colors by Species, even if they are required in the key variable 
+
+```R
+> key + geom_point(size=4, shape=15, color="red3")
+```
+![image](https://user-images.githubusercontent.com/25624961/168719784-4122cff4-5452-430e-96ea-5af6f3102a40.png)
+
+
+**Step 8.** Or the size, shape and color as dependent now on Sepal.Length values from aes 
+
+```R
+> ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length, 
+color = Sepal.Length, size = Sepal.Length)) + geom_point()
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168719854-842198b3-76c6-4a9a-a897-bb6e6ab8020e.png)
+
+
+**Note.** We used here the default ggplot2 colors, but we will see later on how to use other color palettes 
+
+
+**Other Functions and Plots** 
+
+**Step 1.** Remember that we are only covering here the “ggplot()” usage, but other possibilities exist to generate the same output as in Step 6 of this Article, such as “qplot()” which is used to generate quick plots with ggplot2  
+
+
+```R
+> qplot(Sepal.Length, Petal.Length, data = iris, color = 
+factor(Species)) + 
+geom_point() + 
+geom_smooth(se=FALSE)
+```
+
+**Step 2.** Generating different plots will require different geometries 
+
+- Boxplot with default options
+
+```R
+> ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length, 
+color = Species)) + geom_boxplot()
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168720112-a20a0888-4bd4-4ee7-9906-e572397c8790.png)
+
+
+- Bar plot with default options 
+
+```R
+> ggplot(data=Iris,aes(x=Sepal.Length)) + geom_bar()
+```
+![image](https://user-images.githubusercontent.com/25624961/168720232-d1f5e2f7-f037-4706-9432-e5ed497a73e1.png)
+
+
+- Or more complex ones even with default options such as Density plot
+
+```R
+> ggplot(data=Iris,aes(x=Sepal.Length, y = Petal.Length)) + 
+geom_density_2d_filled()
+```
+![image](https://user-images.githubusercontent.com/25624961/168720321-95f3ee6c-cbfe-4c2d-b2a6-e0d1eb7f9409.png)
+
+
+**Step 3.** An important thing to remember is that each plotting functions comes with its own set of option, that might not work for other functions. Let’s see how to generate and modify histograms 
+
+
+- Default options
+
+```R
+> ggplot(data=Iris,aes(x=Sepal.Length)) + geom_histogram()
+```
+![image](https://user-images.githubusercontent.com/25624961/168720413-63b4d8ca-eab3-49be-8f32-fc225a2d24fa.png)
+
+
+- Filling histogram colurs by Species. Note how calling the colour option is different here
+
+```R
+> ggplot(data=Iris, aes(x=Sepal.Length,fill=Species)) + 
+geom_histogram()
+```
+![image](https://user-images.githubusercontent.com/25624961/168720464-a96d9565-adea-40f2-b493-016e9e5da3b9.png)
+
+
+- Use binwidth option with histograms
+
+```R
+> ggplot(data=Iris,aes(x=Sepal.Length,fill=Species)) + 
+geom_histogram(binwidth = 0.05)
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168720525-b5a4bf4a-dd16-40a8-82b7-69aea58c91b5.png)
+
+
+**Note.** A wide range of different plots can be generated with ggplot2 such as Bar plots, Boxplots, Violin Plots, Density Plots, Area Charts, Correlograms…and many many more! 
+
+### Data Visualisation with ggplot2: Setting Facets and Scales 
+
+**Good practice** 
+
+A good practice is to load the packages you need before starting your analysis. It is also recommended to write the packages you need in the script you prepare for a project. This is a list of convenient packages to use with ggplot2: 
+
+```R
+> library(ggplot2)
+> library(RColorBrewer)
+> library(viridis)
+> install.packages("ggsci")
+> library(ggsci)
+```
+
+Note that we need an extra package compared to the previous step. 
+
+
+**Setting your working directory in RStudio** 
+
+**Step 1.** We recommend that you work in the Project folder Project_Test that we created previously, either by clicking directly on the Project_Test or using the following command 
+
+```bash
+> setwd("/Users/imac/Desktop/exerciseR/Project_Test")
+> getwd()
+[1] "/Users/imac/Desktop/exerciseR/Project_Test"
+```
+
+**Step 2.** As a reminder, you can create a specific script file to write your commands and related comments. 
+
+
+**Setting Faceting** 
+
+**Step 1.** Here is an example of how to facet the output by Species, using “facet_wrap()”, that requires the facets argument to be specified, i.e. here the Species 
+
+```R
+> key <- ggplot(data = iris,aes( x= Sepal.Length,y = 
+Petal.Length, color = Species))
+> key + geom_point() + geom_smooth(se=FALSE) + 
+facet_wrap(~Species)
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168722563-18ee4213-7f2b-4495-b0b7-6614e745d60f.png)
+
+
+**Step 2.** Other arguments with “facet_wrap()” give the possibility of fitting the y-axis scales to the values in order to optimize the output 
+
+```R
+> key + geom_point() + geom_smooth(se=FALSE) + 
+facet_wrap(~Species, scale='free_y')
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168722667-91d19c1e-2e28-4ad3-8841-6435985bf842.png)
+
+
+
+**Setting Scales** 
+
+**Scales for positions and axis** 
+
+
+Arguments for continuous x and y aesthetics are by default “scale_x_continuous()” and “scale_y_continuous()”. Variants include reversing order or transforming to a log scale. Please see usage in https://ggplot2.tidyverse.org/reference/scale_continuous.html 
+
+It is also possible to plot discrete variables using “scale_x_discrete()” or “scale_y_discrete()” 
+
+
+**Step 1.** To set x-axis limits using “scale_x_continuous()” with limits option 
+
+```R
+> key + geom_point() + geom_smooth(se=FALSE) + 
+facet_wrap(~Species, scale='free_y') + 
+scale_x_continuous(limits = c(1, 10))
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168722862-b4fbc66b-1668-4c36-9355-5d14f868918c.png)
+
+
+**Step 2.** To reverse the x-axis using “scale_x_reverse()” 
+
+```R
+> key + geom_point() + geom_smooth(se=FALSE) + 
+facet_wrap(~Species, scale='free_y') + 
+scale_x_reverse()
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168722956-b0a2e01d-68da-4733-aa07-975897ccf6ac.png)
+
+**Scales for colours, sizes and shapes** 
+ 
+Continuous colour scales can be specified using many options. Some are already pre-installed in RStudio, such as the RColorBrewer, but other specific colour palettes can be easily installed, loaded and used. Usage for “scale_colour_gradient()” or “scale_fill_gradient()” as examples can be found here https://ggplot2.tidyverse.org/reference/scale_gradient.html 
+
+
+**Step 1.** Scales can be manually set by choosing specific colours, sizes and shapes 
+
+```R
+> key + geom_point() + geom_smooth(se=FALSE) + 
+facet_wrap(~Species, scale='free_y') + 
+scale_shape_manual(values=c(3, 16, 17)) +
+scale_size_manual(values=c(2,3,4)) + 
+scale_color_manual(values=c('#669999','#a3c2c2', '#b30059'))
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168723054-de9cf811-dc77-44e6-a229-5e2ddb69ecd3.png)
+
+**Step 2.** Scales can be set using existing colour palettes from the RColorBrewer package 
+
+```R
+> key + geom_point() + geom_smooth(se=FALSE) + 
+facet_wrap(~Species, scale='free_y') + 
+scale_color_brewer(palette="RdYlBu")
+```
+
+**Note.** We use “scale_color_brewer()” to customize colours for lines or points, whereas we would use “scale_fill_brewer()” for filling colours of area, histogram bars, boxplots, etc 
+
+
+![image](https://user-images.githubusercontent.com/25624961/168723135-6bd4a9e2-3e60-4b2b-8fc4-d644abfb1838.png)
+
+
+**Note.** RColorBrewer palettes can be consulted with 
+
+```R
+> display.brewer.all()
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168723275-bee547f8-e87e-48eb-8a57-f725672e9d94.png)
+
+
+**Step 3.** Scales can use different options with other color palettes from the viridis package 
+
+```R
+> new_key <- key + geom_point(aes(color = Species)) + 
+geom_smooth(aes(color = Species, fill = Species), method = "lm") + 
+facet_wrap(~Species, scale='free_y') 
+ 
+> new_key + scale_shape_manual(values=c(3, 16, 17)) +
+scale_size_manual(values=c(2,3,4)) + 
+scale_color_viridis(discrete = TRUE, option = "D") + 
+scale_fill_viridis(discrete = TRUE)
+```
+
+**Note.** We changed options for “geom_point()” and “geom_smooth()” to show you some other possible display variations 
+
+![image](https://user-images.githubusercontent.com/25624961/168723391-eab7afa6-201d-4925-b728-fdc46d2bb22f.png)
+
+
+**Step 4.** Scales can use packages designed to offer color palettes taken from sources such as highly accessed journals. Examples are “scale_color_npg()” (from Nature Publishing Group), “scale_color_lancet()” (from The Lancet journal) or even “scale_color_tron()” (from the film “Tron: Legacy”). Remember that scale_color functions have their scale_fill counterparts 
+
+```R
+> new_key + scale_color_tron() + scale_fill_tron()
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168723463-1821c51c-f60e-41b7-b7c9-8b960246f0d7.png)
+
+
+**The particular case of missing values** 
+
+**Step 1.** Missing values (NA) can exist in any data set, and need to be taken into account when plotting data. Let’s use this very simple data frame containing NA values 
+
+
+- Plotting with default colors in ggplot2. By default, a grey colour will be used for NA
+
+```R
+> df_test <- data.frame(x = 1:10, y = 1:10, 
+z = c(1, 2, 3, NA, 5, 6, 7, NA, 8, NA))
+> plot_test <- ggplot(df_test, aes(x, y)) + 
+geom_tile(aes(fill = z), size = 10)
+> plot_test
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168723596-87b0b9d7-e81b-4bcb-bd84-60dc754d0de7.png)
+
+- We can ask to have no colour of NA values
+
+```R
+> plot_test + scale_fill_gradient(na.value = NA)
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168723650-f0b4b7d6-9d7a-4156-87cd-dae1e74bc936.png)
+
+
+- Or color NA values in a chosen colour, such as “red3” here
+
+```R
+> plot_test + scale_fill_gradient(na.value = "red3")
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168726526-201483e9-ae70-43c2-86fe-3c7fe3f2635e.png)
+
+
+- Or use another colour palette, instead of default ggplot2 colours, and you will still be able to specify the NA values. Because we need many colors in this palette we use “scale_fill_gradientn()” instead of “scale_fill_gradient()” 
+
+```R
+> plot_test + scale_fill_gradientn(colours = viridis(7), na.value = "white")
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168726575-7a82e289-691b-41f6-8358-c641ebfe8fc1.png)
+
+
+### Data Visualisation with ggplot2: Setting Themes, Coordinates and Labels 
+
+Now that we learned how to choose our data, and apply layers of aesthetics and geometries, let’s explore other possible layers of information such as facets and scales. 
+
+
+**Good practice** 
+
+```R
+> library(ggplot2)
+> library(RColorBrewer)
+> library(viridis)
+> library(ggsci)
+```
+
+**Setting your working directory in RStudio** 
+
+**Step 1.** We recommend you to work in the Project folder Project_Test that we created previously, either by clicking directly on the Project_Test or using the following command 
+
+```bash
+> setwd("/Users/imac/Desktop/exerciseR/Project_Test")
+> getwd()
+[1] "/Users/imac/Desktop/exerciseR/Project_Test"
+```
+
+**Step 2.** As a reminder, you can create a specific script file to write your commands and related comments. 
+
+
+**Setting Themes** 
+
+Themes encompass options for the general graphical display of a graph, by modifying non-data output such as the legends, the panel background, etc… You can refer to “theme()” usage including examples in https://www.rdocumentation.org/packages/ggplot2/versions/3.3.3/topics/theme 
+
+
+**Step 1.** We will use the same new_key variable that we created in the previous Step 
+
+```R
+> new_key <- key + geom_point(aes(color = Species)) + 
+geom_smooth(aes(color = Species, fill = Species), 
+method = "lm") + facet_wrap(~Species, scale='free_y') 
+> new_key + scale_color_tron() + scale_fill_tron()
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168727085-ed894b01-6ba4-44a1-a3a8-147249a3a9b5.png)
+
+
+**Step 2.** By default the themes are set to “theme_grey()” (or gray). The same previous output will be displayed if you type: 
+
+```R
+> new_key + scale_color_tron() + scale_fill_tron() + theme_grey()
+```
+
+**Step 3.** Don’t forget that, as for other functions, you can learn about other variants and options of themes while typing the command in RStudio. If not, simply start typing the function and hit the TAB button on your keyboard. Here is different theme: 
+
+```R
+> new_key + scale_color_tron() + scale_fill_tron() + theme_minimal() 
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168727194-44e43a0d-93f6-4d9d-bf62-4ff85e9a16fc.png)
+
+
+**Step 4.** You can now customize the background color, and also set the legends positions. Here is an example on how to place the legend at the bottom. 
+
+```R
+> new_key + scale_color_tron() + scale_fill_tron() + 
+theme_minimal() + theme(legend.position = "bottom", 
+panel.background = element_rect(fill = "#e0ebeb"), 
+legend.key = element_rect(fill = "#669999"))
+```
+![image](https://user-images.githubusercontent.com/25624961/168727268-6a26d928-63f2-41b1-b19c-c2e10f2a2123.png)
+
+
+**Step 5.** Note the difference hereafter if when we leave the default theme (just by removing “theme_minimal()” to come back to basic) 
+
+```R
+> new_key + scale_color_tron() + scale_fill_tron() +  
+theme(legend.position = "bottom", panel.background = 
+element_rect(fill = "#e0ebeb"), 
+legend.key = element_rect(fill = "#669999"))
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168727357-6e921ce2-2d54-4ebf-992e-42bc143f3e07.png)
+
+**Step 6.** It is also possible to customize the position or justification of your legend. To do this, you can use “theme_position()” to set the position in the whole panel, and “theme_justification()” to set the position in the legend area. They are defined with a vector of length 2, indicating x and y positions in terms of space coordinates, where c(1, 0) is the bottom-right position 
+
+```R
+> new_key + scale_color_tron() + scale_fill_tron() + 
+theme(legend.position=c(1,0), legend.justification = c(1, 0))
+```
+![image](https://user-images.githubusercontent.com/25624961/168727470-ab528db2-5c91-4e68-b124-18126d88f28c.png)
+
+**Setting Coordinates** 
+
+The coordinate system controls the position of objects into the main panel, as well as axis and grid lines display. The most classically used are cartesian coordinates, but many other exist 
+
+
+**Step 1.** Let’s start with “coord_cartesian()” which is set by default. The following commands will have the same output 
+
+```R
+> new_key + scale_color_tron() + scale_fill_tron()
+> new_key + scale_color_tron() + scale_fill_tron() 
++ coord_cartesian()
+```
+
+**Step 2.** We are now used to see specific options with each function. Let’s fix a ratio from x to y axis, and see how this affects the display in the main panel 
+
+```R
+> new_key2 <- ggplot(data = iris) + geom_point(aes(x = 
+Petal.Length, y = Petal.Width, color = Species)) + 
+facet_wrap(~Species) + scale_color_tron() + scale_fill_tron()
+ 
+> new_key2 + coord_fixed(ratio = 2)
+```
+
+**Note.** The panel borders colored in grey show you the new display 
+
+![image](https://user-images.githubusercontent.com/25624961/168727620-12379bf4-2c65-42a4-9f28-1db41de53324.png)
+
+**Step 3.** A logarithmic transformation can be applied to x and y-axis 
+
+```R
+> new_key2 + coord_trans(x = "log2", y = "log2")
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168727676-778f4c25-d1b7-41dc-956c-ea4ad88d97ec.png)
+
+
+**Step 4.** It also possible to swap x-axis values to y-axis and vice-versa 
+
+```R
+> new_key2 + coord_flip()
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168727728-c85aa5e8-f56c-4074-8656-632dde48acca.png)
+
+
+**Step 5.** Compare these 2 outputs to see how it changes the display for other plot types 
+
+
+- Barplot
+
+```R
+> new_key3 <- ggplot(iris, aes(x=Petal.Length, Petal.Width)) 
++ geom_bar(stat="identity", fill="white", color="red3")
+> new_key3
+```
+
+- Right Barplot
+
+```R
+> new_key3 + coord_flip()
+```
+![image](https://user-images.githubusercontent.com/25624961/168727846-c28dccaa-4200-4a71-b5f9-75a542269d68.png)
+
+
+
+**Setting Labels** 
+
+The Labs or Labels system controls the legend, axis and plot labels. You can find examples and usage here https://ggplot2.tidyverse.org/reference/labs.html 
+
+
+**Step 1.** Let’s start with default “labs()” to set the legend title. The following commands will have the same output 
+
+```R
+> new_key + scale_color_tron() + scale_fill_tron()
+> new_key + scale_color_tron() + scale_fill_tron() 
++ labs(color = "Species")
+```
+
+**Step 2.** Notice how we modify the legend title by: 
+
+```R
+> new_key + scale_color_tron() + scale_fill_tron() + 
+labs(color = "Iris_Species")
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168727975-713d79ee-b870-4312-923f-93a547942295.png)
+
+
+**Step 3.** To modify also the x-axis and y-axis names 
+
+```R
+> new_key + scale_color_tron() + scale_fill_tron() + 
+labs(color = "Iris_Species", x = "Sepal Length values", 
+y = "Petal Length values")
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168728023-21c1fdb3-0609-4d61-9efe-67530cfb8b31.png)
+
+
+**Step 4.** Note that it might often be possible to do the same thing using different functions or options. Let’s see 2 options to add a title 
+
+```R
+> new_key + scale_color_tron() + scale_fill_tron() + 
+labs(color = "Iris_Species", x = "Sepal Length values", 
+y = "Petal Length values", title = "Petal vs. Sepal Legnth")
+
+ 
+> new_key + scale_color_tron() + scale_fill_tron() + 
+labs(color = "Iris_Species", x = "Sepal Length values", 
+y = "Petal Length values") + ggtitle("Petal vs. Sepal Legnth")
+graph illustrating added titles
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168728060-2b68b159-446b-4ead-aee8-efcd6463adb5.png)
+
+
+
+### Working with ggplot2 
+
+ 
+Here are some questions on Working with ggplot2 for you to check your learning so far. Please discuss your answers with other learners in the discussion section below: 
+
+
+**Question 1.** 
+
+- What is the difference between the 3 following commands?
+
+
+```R
+> ggplot(data=iris, aes(x=Sepal.Length, y=Petal.Length, 
+color = Species)) + geom_point()
+> ggplot(iris, aes(x=Sepal.Length, y=Petal.Length, 
+color = Species)) + geom_point()
+> ggplot(iris, aes(Sepal.Length, Petal.Length, 
+color = Species)) + geom_point()
+```
+
+- Each will produce a different output
+- They will produce the same output
+- Only the first one is correct
+- Only the second one is correct
+- Only the third one is correct
+- I don’t know
+
+**Question 2.** 
+
+In your opinion, what is the correct command that should have generated the following plot (knowing that this type of plot is called a boxplot) 
+
+- Option 1
+
+```R
+> ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length))+ 
+geom_boxplot()
+```
+
+- Option 2
+```R
+> ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length))+ 
+geom_boxplot() + facet_wrap(~Species)
+```
+
+- Option 3
+
+```R
+> ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length, 
+color = Species)) + geom_boxplot()
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168728432-4c436f7b-07d3-40ba-9114-ae81c684bfd9.png)
+
+**Question 3.** 
+
+Consider the following command that generated the associated plot below:
+
+```R
+> ggplot(data = iris, aes(x = Sepal.Length, y = Petal.Length, 
+color = Species)) + geom_boxplot() + geom_smooth(se=FALSE) + 
+facet_wrap(~Species, scale='free_y') + 
+scale_color_brewer(palette="RdYlBu")
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168728591-4f11a4b9-3609-44c1-9fad-126ca127dcf5.png)
+
+
+Which layer(s) should we add in order to produce the following plot? 
+
+
+```R
++ facet_wrap(~Species)
+```
+
+```R
++ facet_wrap(~Species, scale='free_y')
+```
+
+```R
++ facet_wrap(~Species, scale='free_y') + 
+labs(x = "Sepal Length", title = "Petal vs Sepal Length")
+```
+
+```R
++ facet_wrap(~Species) + labs(x = "Sepal Length", 
+title = "Petal vs Sepal Length")
+```
+
+```R
++ facet_wrap(~Species, scale='free_y') + labs(y = "Petal Length", 
+title = "Petal vs Sepal Length")
+```
+
+![image](https://user-images.githubusercontent.com/25624961/168728784-da555752-59c2-4ad5-a2da-8668fd27412f.png)
+
+**Solutions:** 
+
+- Answer 1. 
+The correct answer is 2 
+- Answer 2. 
+The correct answer is 3 
+- Answer 3. 
+The correct answer is 3 
+
+
+## Summary of Week 3 
+
+### Data Visualisation in R/RStudio - Conclusion and Resources  
+
+Data visualisation in R and RStudio makes it possible to easily use basic plotting functions, or apply more advanced functions through packages. 
+
+As you must have noticed throughout this week, the undeniable added value of R/RStudio compared to the more classical resources such as Excel, is the ability to produce publication-ready graphics. For this, you can either use default functions and options, which already produce a highly controlled output quality, or you can also pre-define advanced options and use them in variables. 
+
+Moreover, you can easily ensure reproducibility of your output, simply by writing your commands in a script. This would allow you to apply changes in your data or display with the same final output. 
+
+Importantly, there are plenty of websites and online resources to easily take you through using packages, either using their official documentation, or personal contributions and forums to tackle certain aspects of the analysis. 
+
+Although using packages such as ggplot2 might seem cumbersome to understand in the beginning, I’m pretty confident that you will quickly understand that the game is worth the candle! 
+
+**Resources for R/RStudio** 
+There are obviously tons of online resources to guide you through introductory or advanced R or RStudio usage. 
+
+One I can suggest is http://www.sthda.com/english/wiki/ggplot2-essentials. This very famous website (STHDA: Statistical Tools for High-throughput Data Analysis) will give you a step by step explanation of how to use R and RStudio, taking you from very basic introductions of R principles to more advanced packages for data manipulation, statistical analysis, or data visualization with many detailed examples. 
+
+**Resources for ggplot2** 
+As I believe you understood at this point, there are still many functions and options to explore in ggplot2. 
+
+For a list of functions available in ggplot2, there are again many resources on the web. It is important to browse these resources by yourself, because each one of you will have specific display requirements and we obviously cannot cover them all. 
+
+However, now that I showed you some basic usage, and in order to help you start using ggplot2 with good references, my personal preferences are for the following resources: 
+
+- https://ggplot2-book.org/ This is the on-line version of the book “ggplot2: elegant graphics for data analysis” published (Springer publishing). This a very detailed resource on explanations of each layer with helpful examples 
+- https://ggplot2.tidyverse.org/reference/ This website presents ggplot2 functions classified by type of layer (aesthetics, geoms,…) and in which you can click on each function name to be automatically redirected to its usage 
+- https://www.rdocumentation.org/packages/ggplot2/versions/3.3.3 The first page of this documentation page presents a “cheatsheet” that is a printable document summarizing functions in ggplot2. At the bottom of the page you will also find a list of clickable ggplot2 functions to access their usage including examples. Many links to start working with ggplot2 are also given here 
+- All other links to resources that have been given to you throughout this course 
+
+
+### Summary of Week 3  
+
+Seeing how to handle and analyse your data using the command-line in Week 1, and how to write and run bash scripts to automate that handling during Week 2, in Week 3 you saw how you can analyse and visually represent your data using R and RStudio. 
+
+We first reviewed together the key concepts and basics of using the R language. You had an opportunity to learn how to manipulate lists, vectors or dataframes, and how to read and interrogate data from files to create simple plots under R. We then saw how RStudio can simplify these processes, and you learned how to work under RStudio to easily create simple or more complex plots using available packages specifically designed for that purpose. 
 
 
 
