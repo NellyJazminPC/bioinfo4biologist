@@ -1,78 +1,13 @@
 # Bioinformatics for Biologists (futurelearn.com)
 
+In Week 1 of the course, we will introduce you to Linux and explain why it is widely used in bioinformatics. We will talk about the Linux command line and explain the directory structure of the file system. Some essential Linux commands will demonstrate how to access, manipulate and edit text files. The concept of environment variables will be introduced, and we will also demonstrate how to install a piece of widely used bioinformatics software. In addition, we’re going to talk to a biologist who has found their work transformed by using command line Linux.
+
+In Week 2, we’ll build on the commands you learnt in Week 1 and introduce you to bash scripting. As the week progresses, we’ll look at why using bash scripts is such a powerful means of automating repetitive commands. We’ll walk you through writing your very own first bash script and from there, you’ll learn about basic bash syntax in the form of variables, conditional logic and functions. And, most importantly, you’ll start to put your individual commands together to form simple bash scripts. You will also hear some advice from a professional bioinformatician. In the final exercise you will have an opportunity to write a script to parse biological data.
+
+After you see how to handle and analyse your data using the command-line in Week 1, and how to write and run bash scripts to automate that handling during Week 2, in Week 3 you will see how you can analyse and visually represent your data using R and RStudio. We will first review together the key concepts and basics of using the R language. You will learn how to manipulate lists, vectors or dataframes, and how to read and interrogate data from files to create simple plots under R. We will then see how RStudio can simplify these processes, and you will learn how to work under RStudio to easily create simple or more complex plots using packages specifically designed for that purpose.
+
+
 # Weak 1
-### Glossary
-
-- argument - generally, arguments are options controlling how functions and commands should operate on specific data
-
-- bash - Bourne Again Shell (Bash). A shell developed by Brian Fox in 1988.
-
-- bioinformatics - the science of collecting and analysing complex biological data.
-
-- command - a type of input, typically given in a terminal, which instructs the system to perform a given task.
-
-- CRAN - the Comprehensive R Archive Network. Provides access to mirrors, a set of sites spread worldwide, for downloading R and related packages
-
-- csv file - comma-separated values file. In these files, a “comma” delimiter is used to separate items of the same line
-
-- .csv - extension of a csv file
-
-- data frame - a group of vectors organised together in a list. In other words, a data frame is a data set containing data organized in columns and rows
-
-- exit status/code - value returned by a command or process to it’s caller.
-
-- function - a set of statements allowing to perform a task
-
-- getwd() - get your current working directory in R
-
-- GUI - a graphical user interface through which users interact with electronic devices
-
-- help() or ? - help() is a function and “?” an operator in R to provide help
-
-- install.packages() - install new R packages
-
-- kernel - the computer program at the core of an operating system. The kernel has control of everything in the system
-
-- library() - load a package that has been previously installed
-
-- list - a set of objects of any class, linked together
-
-- loop - process by which code can be repeated multiple times.
-
-- MLST - multilocus sequence typing. A technique in microbiology for isolating microbial species using the DNA sequences of housekeeping genes.
-
-- mode - the property of an object in R, such as numeric, character, logical, etc…
-
-- object - a variable or a data set or any form of item containing information created or used in R. More generally, anything that has a “mode” is an object in R (data frames, vectors, lists, etc…)
-
-- package - a collection of functions and commands written in order to achieve a certain goal in R, and allowing users to easily query their data using specific commands and arguments for each package
-
-- QC - quality control. In DNA sequencing, ensuring that the sequenced data is suitable to use in further analyses.
-
-- script - a form of computer program, typically a file, which contains a collection of commands.
-
-- setwd() - set your working directory
-
-- shell - generic name for an application or program which provides access to the underlying system resources.
-
-- string - a one dimensional array of characters
-
-- terminal - a GUI-based interface into which users can type commands and print text output
-
-- text editor - a computer program for editing plain text files. This differs from a word processor, which includes text formatting.
-
-- text file - a computer file in which data is stored in a particular structure of successive lines. When used for more complex purposes, it is generally structured in lines for the entries and in columns or “fields” for different conditions. All elements in these entries are delimited from one another by “separators” (spaces, tabulation, etc…)
-
-- UNIX - is an operating system developed by Bell Laboratories of AT&T, and is an example of a multi-tasking, multi-user operating system
-
-- user - the individual accessing system resources.
-
-- variable - a string of characters that is used to denote some value stored within the computer and may be changed during execution of a programme
-an object in R that stores data in a specified manner, and can be used to easily manipulate the data
-
-- vector - the simplest structure of data in R, consisting of elements called components
-
-
 ###  Browser options
 To practise, you can also use this browser based option:
 
@@ -81,7 +16,6 @@ https://bellard.org/jslinux/ choosing the Alpine Linux 3.12.0 Console link.
 or
 
 https://bellard.org/jslinux/vm.html?url=alpine-x86.cfg&mem=192
-
 
 
 ### Files permissions.     
@@ -159,7 +93,11 @@ sort -s fruit.txt
 Duplicate lines can be removed with the -u option
 
 sort -u fruit.txt
-How to use uniq
+
+
+
+**How to use uniq**
+
 
 The uniq command accepts input from a text-based file and removes any repeated lines, only if they are adjacent to each other. That’s why it’s used in conjunction with sort to remove non-adjacent lines.
 
