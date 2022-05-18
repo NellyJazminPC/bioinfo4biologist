@@ -44,6 +44,35 @@ A continuación, se iniciará la aplicación de terminal.
 ![image](https://user-images.githubusercontent.com/25624961/168959864-9d3900c0-d050-4ee6-b9e2-c760153304e2.png)
 
 
+## Windows: Aplicación Ubuntu 
+
+Instale la aplicación Ubuntu desde Microsoft Store. 
+
+
+https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6?activetab=pivot:overviewtab 
+
+
+Ubuntu en Windows le permite usar Ubuntu Terminal y ejecutar las utilidades de línea de comandos de Ubuntu, incluidas bash, ssh, git, apt y muchas más. 
+
+
+Tenga en cuenta que Windows 10 S no admite la ejecución de esta aplicación. 
+
+
+Para usar la aplicación Ubuntu, primero debe usar "Activar o desactivar las funciones de Windows" y seleccionar "Subsistema de Windows para Linux", hacer clic en Aceptar, reiniciar y usar esta aplicación.  
+
+![image](https://user-images.githubusercontent.com/25624961/168960947-238fdc94-5b20-4b4b-9b89-71f4a31de830.png)
+
+El paso anterior también se puede realizar mediante el indicador de PowerShell del administrador (Administrator PowerShell prompt): `Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux` 
+
+
+Esta aplicación instala la versión Ubuntu 20.04 LTS en Windows. 
+
+**Inicie la aplicación de Ubuntu**  
+
+Para iniciar, use "ubuntu" en la línea de comandos (cmd.exe) o haga clic en el mosaico de Ubuntu en el menú Inicio. 
+![image](https://user-images.githubusercontent.com/25624961/168961019-a4abb818-32ca-4d9d-ab1a-0c58250f2836.png)
+
+
 
 # Opciones para prácticar por medio de un navegador (browser)
 
