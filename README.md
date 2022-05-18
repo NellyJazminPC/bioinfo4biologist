@@ -11,7 +11,7 @@ Da clink en los siguientes apartados y sigue las instrucciones:
 1.- Para abrir una terminal con un entorno linux o parecido si estas en otro sistema operativo  
 - [Configuración de Linux o de un entorno similar a Linux y descarga de datos](Inst_conf_Linux.md)
 
-# En la primera parte:  
+# PRIMERA PARTE:  
 
 - Presentaremos Linux y veremos por qué se usa ampliamente en bioinformática. 
 - Trabajaremos sobre la línea de comandos de Linux y explicaremos la estructura de directorios del sistema de archivos. 
