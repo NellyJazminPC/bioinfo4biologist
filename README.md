@@ -19,11 +19,11 @@ Da clink en los siguientes apartados y sigue las instrucciones:
 - Se introducirá el concepto de variables y también se demostrará cómo instalar un software de bioinformática ampliamente utilizado.    
 
 ## Introducción a Linux
-### 1.- [¿Qué es Linux y por qué usarlo?](Linux.md)
-### 2.- [La terminal y la línea de comandos](Terminal.md)
+### 1.- [¿Qué es Linux y por qué usarlo?](Primera_Parte/Linux.md)
+### 2.- [La terminal y la línea de comandos](Primera_Parte/Terminal.md)
 
 ## El sistema de archivos de Linux y la edición de texto  
-### 1.- [El sistema de archivos de Linux: directorios y archivos](Sistema_archivos_linux.md)
+### 1.- [El sistema de archivos de Linux: directorios y archivos](Primera_Parte/Sistema_archivos_linux.md)
 ### 2.- [Conceptos básicos de la línea de comandos](https://drive.google.com/file/d/11GkVnLle3i96RNKEW12sZtv6_dH35THJ/view?usp=sharing)
 
 
