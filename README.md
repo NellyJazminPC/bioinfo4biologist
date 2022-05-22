@@ -25,5 +25,8 @@ Da clink en los siguientes apartados y sigue las instrucciones:
 ## El sistema de archivos de Linux y la edición de texto  
 ### 1.- [El sistema de archivos de Linux: directorios y archivos](Primera_Parte/Sistema_archivos_linux.md)
 ### 2.- [Conceptos básicos de la línea de comandos](https://drive.google.com/file/d/11GkVnLle3i96RNKEW12sZtv6_dH35THJ/view?usp=sharing)
+### 3.- [Archivos, propiedad y permisos](Primera_Parte/Archivos_permisos.md)
+### 4.- [Pistas, tips y atajos](https://drive.google.com/file/d/1Fwb7rzihKH6SpdX6pCLlJZqEppxmxBpI/view?usp=sharing)
+### 5.- []()
 
 
