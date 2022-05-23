@@ -27,6 +27,10 @@ Da clink en los siguientes apartados y sigue las instrucciones:
 ### 2.- [Conceptos básicos de la línea de comandos](https://drive.google.com/file/d/11GkVnLle3i96RNKEW12sZtv6_dH35THJ/view?usp=sharing)
 ### 3.- [Archivos, propiedad y permisos](Primera_Parte/Archivos_permisos.md)
 ### 4.- [Pistas, tips y atajos](https://drive.google.com/file/d/1Fwb7rzihKH6SpdX6pCLlJZqEppxmxBpI/view?usp=sharing)
-### 5.- []()
+### 5.- [Edición de texto y escritura de archivos](Primera_Parte/Edicion_texto.md)
 
+## Manipulación y procesamiento de contenido de archivos  
+### 1.- [Acceso al contenido del archivo](Primera_Parte/Acceso_cont_archivo.md)
+### 2.- [Enlaces simbólicos y su uso](Primera_Parte/Enlaces_simbolicos.md)
+### 3.- []()
 
