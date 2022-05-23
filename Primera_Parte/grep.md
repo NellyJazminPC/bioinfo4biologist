@@ -41,10 +41,10 @@ Utilizando esta información y los archivos de la carpeta que se descargo al ini
 
 - Pregunta 1: ¿Qué archivos contienen la palabra "difference"?
 
-- Pregunta 2 ¿Cuántas veces aparece la palabra “Premium” en el archivo diamonds_fix.txt?
+- Pregunta 2 ¿Cuántas veces aparece la palabra “Premium” en el archivo Diamonds_fix.txt?
 
-- Pregunta 3 ¿Cuántas líneas en el archivo diamonds_fix.txt no incluyen la frase “Very good”?
+- Pregunta 3 ¿Cuántas líneas en el archivo Diamonds_fix.txt no incluyen la frase “Very good”?
 
 <div align="center"><img src="https://user-images.githubusercontent.com/25624961/169896728-6275c51b-44cb-4e03-938a-f4cf408da088.png" width="400"></div>
 
-#### Respuestas: [solo después de haberlo intentando]()
+#### Respuestas: [solo después de haberlo intentando](R_grep.md)
