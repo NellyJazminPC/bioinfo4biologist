@@ -106,6 +106,12 @@ Para obtener más información sobre sort y uniq, visite https://www.linode.com/
 ¿Cómo extraería solo las líneas que se repiten más de una vez en el archivo `fruit.txt` para enviar la salida a un nuevo archivo llamado `repeat_fruit.txt`? 
 
 Respuesta:
+<img src="https://user-images.githubusercontent.com/25624961/169893508-7113c53a-0c85-4112-94b9-a2c18be1860c.png" alt="Smiley face" width="42" height="42"><div title="Texto flotante">Pon el cursor encima</div>
 
 ![la respuesta es:](https://user-images.githubusercontent.com/25624961/169893508-7113c53a-0c85-4112-94b9-a2c18be1860c.png)
 
+
+<figure>
+  <img src="https://user-images.githubusercontent.com/25624961/169893508-7113c53a-0c85-4112-94b9-a2c18be1860c.png" alt="Smiley face" width="42" height="42" />
+  <figcaption>Tu texto</figcaption>
+</figure>
