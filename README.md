@@ -32,5 +32,6 @@ Da clink en los siguientes apartados y sigue las instrucciones:
 ## Manipulación y procesamiento de contenido de archivos  
 ### 1.- [Acceso al contenido del archivo](Primera_Parte/Acceso_cont_archivo.md)
 ### 2.- [Enlaces simbólicos y su uso](Primera_Parte/Enlaces_simbolicos.md)
-### 3.- []()
+### 3.- [Comenzando con `wc`](Primera_Parte/wc.md)
+### 4.- [Manipulación de archivos: `sort` y `uniq`](Primera_Parte/sort_uniq.md)
 
