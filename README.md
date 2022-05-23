@@ -35,7 +35,7 @@ Da clink en los siguientes apartados y sigue las instrucciones:
 ### 3.- [Comenzando con `wc`](Primera_Parte/wc.md)
 ### 4.- [Manipulación de archivos: `sort` y `uniq`](Primera_Parte/sort_uniq.md)
 ### 5.- [Coincidencia de patrones (`grep`)](Primera_Parte/grep.md)  
-### 6.- [Sustituciones usando sed](Primera_Parte/sed.md)
-### 7.- [Procesamiento de archivos con AWK](Primera_Parte/awk.md)
+### 6.- [Sustituciones usando `sed`](Primera_Parte/sed.md)
+### 7.- [Procesamiento de archivos con `AWK](Primera_Parte/awk.md)
 
 
