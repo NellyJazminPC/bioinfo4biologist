@@ -37,5 +37,27 @@ Da clink en los siguientes apartados y sigue las instrucciones:
 ### 5.- [Coincidencia de patrones: `grep`](Primera_Parte/grep.md)  
 ### 6.- [Sustituciones usando `sed`](Primera_Parte/sed.md)
 ### 7.- [Procesamiento de archivos con `AWK`](Primera_Parte/awk.md)
+### 8.- [Test](Primera_Parte/Test_parte1.md)
+
+## Introducción a las variables de entorno (Environment Variables) e instalación de software de muestra 
+
+### 1.- [Introducción a las variables de entorno]() 
+### 2.- [Una instalación de software de muestra - Samtools](Primera_Parte/instalacion.md)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
