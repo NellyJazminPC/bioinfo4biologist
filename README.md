@@ -41,23 +41,41 @@ Da clink en los siguientes apartados y sigue las instrucciones:
 
 ## Introducción a las variables de entorno (Environment Variables) e instalación de software de muestra 
 
-### 1.- [Introducción a las variables de entorno]() 
+### 1.- [Introducción a las variables de entorno](Primera_Parte/env_shell_var.md) 
 ### 2.- [Una instalación de software de muestra - Samtools](Primera_Parte/instalacion.md)
 
 
+# SEGUNDA PARTE:  
+
+- Introducción a la creación y manejo de los **bash scripts** 
+- Secuencias de comandos bash
+- Sintaxis básica de bash a través de variables, lógica condicional y funciones.
+- Unión de comandos individuales para formar scripts bash
 
 
+## Introducción a los "Bash Scripts"
+### 1.- []()
+### 2.- []()
 
 
+## Escribir scripts de Bash: Variables y matrices
+### 1.- []()
+### 2.- []()
+### 3.- []()
+### 4.- []()
 
 
+## Captura de la entrada del usuario
+### 1.- []()
+### 2.- []()
 
 
-
-
-
-
-
+## Expresiones condicionales
+### 1.- []()
+### 2.- []()
+### 3.- []()
+### 4.- []()
+### 5.- []()  
 
 
 
