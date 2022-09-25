@@ -11,6 +11,9 @@
 - [Advanced R by Hadley Wickham](http://adv-r.had.co.nz/)
 - [Mapeo de la biomasa aérea de los bosques mediante datos de sensores remotos y R](https://catalogo.altexto.mx/mapeo-de-la-biomasa-aerea-de-los-bosques-mediante-datos-de-sensores-remotos-y-r-9130h.html)
 
+### Edición de textos
+- `pdftools` y `tesseract`[1](https://github.com/ColmexBDCV/tricks_for_librarians/blob/master/RCode/pdftools-y-tesseract/pdftools-y-tesseract_demo.R#L32) y [2](https://www.r-bloggers.com/2019/04/join-split-and-compress-pdf-files-with-pdftools/)
+
 ### Machine Learning with R
 - [Hands-On Machine Learning with R](https://bradleyboehmke.github.io/HOML/)
 - [Deep Learning](https://www.deeplearningbook.org/contents/TOC.html)
