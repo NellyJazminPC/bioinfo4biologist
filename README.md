@@ -84,3 +84,7 @@ Da clink en los siguientes apartados y sigue las instrucciones:
 
 
 ## Python
+
+
+
+# [Otros recursos recomendados](Otros_recursos_recomendados.md)
