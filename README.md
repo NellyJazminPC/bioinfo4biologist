@@ -78,4 +78,6 @@ Da clink en los siguientes apartados y sigue las instrucciones:
 ### 5.- []()  
 
 
+## R y Rstudio --> [Posit](https://www.rstudio.com/blog/rstudio-is-becoming-posit/) 
+
 
