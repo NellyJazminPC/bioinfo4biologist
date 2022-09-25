@@ -81,3 +81,6 @@ Da clink en los siguientes apartados y sigue las instrucciones:
 ## R y Rstudio --> [Posit](https://www.rstudio.com/blog/rstudio-is-becoming-posit/) 
 
 
+
+
+## Python
