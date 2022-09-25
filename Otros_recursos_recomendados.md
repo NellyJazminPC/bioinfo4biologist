@@ -4,6 +4,7 @@
 - [Introduction to Python](https://www.datacamp.com/courses/intro-to-python-for-data-science)
 - [Programming with Python](https://swcarpentry.github.io/python-novice-inflammation/)
 - [Data Analysis and Visualization in Python for Ecologists](https://datacarpentry.org/python-ecology-lesson/)
+- [Introduction to Pandas in Python](https://medium.com/latinxinai/introduction-to-pandas-in-python-8816ee9acd9d)
 
 # R
 - [R for Data Science](https://r4ds.had.co.nz/index.html)
