@@ -68,15 +68,16 @@ El paso anterior también se puede realizar mediante el indicador de PowerShell 
 Esta aplicación instala la versión Ubuntu 20.04 LTS en Windows. 
 
 
-### Otra manera de utilizar la terminal en Microsoft si se conecta a un _cluster_:
-
-En su computadora local se puede instalar [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). Con PuTTY podemos ejecutar una terminal de manera remota y ejecutar comandos en otro dispositivo. Para acceder a él, tan solo necesitamos una dirección IP, el puerto, el nombre de usuario, y la contraseña. Si todo funciona de manera correcta, ya podremos ejecutar comandos en ese dispositivo. 
-
-
 **Inicie la aplicación de Ubuntu**  
 
 Para iniciar, use "ubuntu" en la línea de comandos (cmd.exe) o haga clic en el mosaico de Ubuntu en el menú Inicio. 
 ![image](https://user-images.githubusercontent.com/25624961/168961019-a4abb818-32ca-4d9d-ab1a-0c58250f2836.png)
+
+
+
+### Otra manera de utilizar la terminal en Microsoft si se conecta a un _cluster_:
+
+En su computadora local se puede instalar [PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). Con PuTTY podemos ejecutar una terminal de manera remota y ejecutar comandos en otro dispositivo. Para acceder a él, tan solo necesitamos una dirección IP, el puerto, el nombre de usuario, y la contraseña. Si todo funciona de manera correcta, ya podremos ejecutar comandos en ese dispositivo. 
 
 
 
