@@ -71,3 +71,5 @@ Horario: 8:00 a 10:00 h
 Para ir comenzando es importante revisar el siguiente glosario con algunos de los términos que más se utilizaran en las siguientes tres partes del curso:
 - [Glosario](Glosario.md)
 - [Glossary](Glossary.md)
+
+### [Otros sitios recomendados](https://github.com/NellyJazminPC/bioinfo4biologist/blob/main/Otros_recursos_recomendados.md)
