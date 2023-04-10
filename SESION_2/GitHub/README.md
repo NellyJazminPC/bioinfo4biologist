@@ -8,7 +8,7 @@ GitHub es un sitio web y un servicio en la nube que ayuda a los desarrolladores 
 
 ## Versión de Control
 
-Una Versión de Control ayuda a llevar un registro y administrar cualquier cambio en el código del proyecto. A medida que crece este proyecto, la versión de control se vuelve esencial. 
+Una Versión de Control ayuda a llevar un registro y administrar cualquier cambio en el código del proyecto. A medida que crece este proyecto, la versión de control se vuelve esencial.
 
 La versión de control permite trabajar de forma segura a través de una bifurcación y una fusión.
 
@@ -51,7 +51,7 @@ Es muy buena idea llevar un control de versiones de tus scrips en tu carpeta `bi
 
 Sin embargo, cuando subas tu proyecto con todo y datos como un repositorio (e.g. a Dryad) recuerda **NO** compartir la carpeta `.git`.
 
-Como introducción a `git` primero vamos a entender los principales conceptos y el [flujo de trabajo de Github leyendo esta documentación](https://guides.github.com/introduction/flow/). 
+Como introducción a `git` primero vamos a entender los principales conceptos y el [flujo de trabajo de Github leyendo esta documentación](https://guides.github.com/introduction/flow/).
 
 Es recomendable leer [An Intro to Git and GitHub for Beginners (Tutorial) de Meghan Nelson](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners).
 
@@ -72,7 +72,7 @@ Piensa en `push` para enviar y `pull` para recibir.
 
 + **Pull request**: Si se quieren agregar las modificaciones en la branch `master` o `main`, se envía una solicitud al propietario original. Es decir tú no haces `push`, le pides al propietario que haga `pull`.
 
-+ **Merge**: Una vez que el propietario del repositorio ha revisado y aceptado los cambios, fusiona las ramas. 
++ **Merge**: Una vez que el propietario del repositorio ha revisado y aceptado los cambios, fusiona las ramas.
 
 
 
@@ -81,11 +81,11 @@ Piensa en `push` para enviar y `pull` para recibir.
 
 ### Configurando nuestro git local con Github (Linux y MacOS)
 
-Para poder vincular tu `git` con tu cuenta de Github necesitas **asociar tu dirección de correo electrónico principal de Github con tu git local**. Además puedes cambiar tu nombre de usuario, pero lo que realmente te vincula con Github es tu correo. 
+Para poder vincular tu `git` con tu cuenta de Github necesitas **asociar tu dirección de correo electrónico principal de Github con tu git local**. Además puedes cambiar tu nombre de usuario, pero lo que realmente te vincula con Github es tu correo.
 
 Para cambiar tu correo necesitas seguir cualquiera de estos dos métodos:
 
-1) Correr `$ git config --global --edit` 
+1) Correr `$ git config --global --edit`
 
 Lo cual abrirá una pantalla de `vim`. Edita tu nombre de usuario y cuenta de correo. Para poder "escribir en vim" presiona `I` (de insertar) donde quieras comenzar a escribir. Recuerda, para guardar y salir, tecla Esc y luego `:wq`.
 
@@ -192,7 +192,7 @@ Para ver los cambios que se hicieron a un archivo.
 
 ```
 $ echo "el mundo es bello" > ejemplo.txt
-$ cat ejemplo.txt 
+$ cat ejemplo.txt
 el mundo es bello
 $ git status
 On branch main
@@ -248,7 +248,7 @@ Changes to be committed:
 
 Una vez que quieres integrar tus cambios a una rama, este comando te permite fusionar ramas. Debes decirle el origen (rama donde hiciste los commits) y el destino (por ejemplo main u otra rama).
 
-**CUIDADO** no podrán hacer `push` porque no son propietarios de este repo. Para ello deberían hacer primero un `pull request`. 
+**CUIDADO** no podrán hacer `push` porque no son propietarios de este repo. Para ello deberían hacer primero un `pull request`.
 
 ```
 $ git push origin main
@@ -286,7 +286,7 @@ Si vas a trabajar con repos de otras personas problablemente no quieras hacer un
 Para ver el historial de commits que se han hecho en el repo. Por default te mostrará los commits en orden cronológico invertido, pero hay muchas opciones que puedes darle para buscar algo más específico. [Instrucciones aquí](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History).
 
 
-**Ejercicio:** clona el repositorio de Seminarios_LBM 
+**Ejercicio:** clona el repositorio de Seminarios_LBM
 
 
 #### `git` ACCIONES ESENCIALES QUE NO HAY QUE OLVIDAR
@@ -297,7 +297,7 @@ Para ver el historial de commits que se han hecho en el repo. Por default te mos
 
 2) `git diff nombrearchivo` para ver las modificaciones que se hicieron a un archivo desde el último commit.
 
-3) `git add nombrearchivo` (para un archivo) o `git add *` o `git add .` (para todos los archivos) para agregar los archivos **que queremos incluir en un commit**. Como el equivalente a "adjuntarlos" en un correo que te enviarías por correo. 
+3) `git add nombrearchivo` (para un archivo) o `git add *` o `git add .` (para todos los archivos) para agregar los archivos **que queremos incluir en un commit**. Como el equivalente a "adjuntarlos" en un correo que te enviarías por correo.
 
 4) `git commit -m "mensaje corto explicando qué contiene el commit"`. Como el contenido de un correo donde te explicarías a tí mismo qué cambios hiciste que ameritan guardar la versión ("commit").
 
@@ -346,7 +346,7 @@ Thumbs.db
 ```
 $ git add .gitignore
 $ git commit -m "Added .gitignore file to repo"
-$ git push 
+$ git push
 ```
 
 También puedes crear un `.gitignore` global que aplique en todos los repos de tu compu. Instrucciones [aquí](https://help.github.com/articles/ignoring-files/)
@@ -358,58 +358,58 @@ https://desktop.github.com/
 
 Guía https://docs.github.com/es/free-pro-team@latest/desktop/installing-and-configuring-github-desktop/installing-github-desktop
 
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(3).png)
+![](2020-11-09%20(3).png)
 
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(4).png)
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(6).png)
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(8).png)
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(9).png)
+![](2020-11-09%20(4).png)
+![](2020-11-09%20(6).png)
+![](2020-11-09%20(8).png)
+![](2020-11-09%20(9).png)
 
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(10).png)
+![](2020-11-09%20(10).png)
 
 ## Terminamos la instalación y ahora comenzamos a explorar GitHub Desktop
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(11).png)
+![](2020-11-09%20(11).png)
 
 
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(12).png)
+![](2020-11-09%20(12).png)
 
 ### Vamos a File y observamos la lista de acciones que se desglosa, entre ellas vamos a Options
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(14).png)
+![](2020-11-09%20(14).png)
 
-**Podemos cambiar la apariencia** 
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(15).png)
+**Podemos cambiar la apariencia**
+![](2020-11-09%20(15).png)
 
 ## Intenta crear un nuevo repositorio
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(16).png)
+![](2020-11-09%20(16).png)
 
 
 ### Observa las opciones que aparecen
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(17).png)
+![](2020-11-09%20(17).png)
 
 ### Para sincronizar este repositorio local con tu cuenta GitHub en la nube vamos a publicar **Publish**
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(18).png)
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(19).png)
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(20).png)
+![](2020-11-09%20(18).png)
+![](2020-11-09%20(19).png)
+![](2020-11-09%20(20).png)
 
 ### Ve a tu cuenta y actualiza la página, debe aparecer un nuevo repositorio, el que acabas de publicar
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(21).png)
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(22).png)
+![](2020-11-09%20(21).png)
+![](2020-11-09%20(22).png)
 
 ### Por ahora tu repositorio esta vacio, si tienes algún archivo que quieras incorporar puedes copiar y pegar o mover ese archivo a tu directorio local donde esta el repositorio que creaste
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(24).png)
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(25).png)
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(26).png)
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(27).png)
+![](2020-11-09%20(24).png)
+![](2020-11-09%20(25).png)
+![](2020-11-09%20(26).png)
+![](2020-11-09%20(27).png)
 
 ### Para poder sincronizar los cambios debes agregar un comentario en **Commit to main**
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(29).png)
+![](2020-11-09%20(29).png)
 
 ### Después, vas a Repository y das click en **Push**
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(31).png)
+![](2020-11-09%20(31).png)
 
 ### Ahora ve a tu cuenta en la nube y comprueba que los cambios se hayan sincronizado
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(35).png)
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(36).png)
+![](2020-11-09%20(35).png)
+![](2020-11-09%20(36).png)
 
 
 ### Documentación extra
@@ -428,6 +428,5 @@ Guía https://docs.github.com/es/free-pro-team@latest/desktop/installing-and-con
 + Lee la [documentación de `pull request` en Github](https://help.github.com/en/articles/about-pull-requests).
 
 ### Un editor de texto recomendado por GitHub para Windows o MacOS
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(37).png)
-![](https://github.com/NellyJazminPC/Seminarios_LBM/blob/main/GitHub/2020-11-09%20(39).png)
-
+![](2020-11-09%20(37).png)
+![](2020-11-09%20(39).png)
