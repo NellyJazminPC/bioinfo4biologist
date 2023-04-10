@@ -5,5 +5,5 @@
 
 ## Introducción a las variables de entorno (Environment Variables) e instalación de software de muestra
 
-### 1.- [Introducción a las variables de entorno](Primera_Parte/env_shell_var.md)
-### 2.- [Una instalación de software de muestra - Samtools](Primera_Parte/instalacion.md)
+### 1.- [Introducción a las variables de entorno](env_shell_var.md)
+### 2.- [Una instalación de software de muestra - Samtools](instalacion.md)
