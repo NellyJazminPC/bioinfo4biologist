@@ -1,0 +1,8 @@
+# Ignora archivos del sistema Mac
+.DS_store
+
+#Ignora la carpeta de archive
+archive/
+
+#Ignora el historial de R
+.Rhistory
