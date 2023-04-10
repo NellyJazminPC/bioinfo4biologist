@@ -54,16 +54,16 @@ Las sesiones duraran dos horas y habrá material extra disponible para que los e
 ## Calendario
 Horario: 8:00 a 10:00 h
 
-Día | Actividad |
---- |  --- |
-Martes 11 | 1.- Introducción a la Bioinformática |
-        |  2.- Sistema linux y comando básicos en la terminal |
-        |  3.- Manipulación y procesamiento de archivos |
-Jueves 13 | 4.- Introducción a las variables de entorno e instalación de programas |
-              | 5.- Introducción a Git y Github |
-              | 6.- Escribir y documentar scripts informáticos |
-Jueves 27 | 7.- Variables condicionales y for loops |
-          | 8.- Funciones básicas en R |
+| Día | Actividad |
+| --- |  --- |
+| Martes 11 | 1.- Introducción a la Bioinformática |
+|      |  2.- Sistema linux y comando básicos en la terminal |
+|        |  3.- Manipulación y procesamiento de archivos |
+|Jueves 13 | 4.- Introducción a las variables de entorno e instalación de programas |
+|              | 5.- Introducción a Git y Github |
+|              | 6.- Escribir y documentar scripts informáticos |
+|Jueves 27 | 7.- Variables condicionales y for loops |
+|          | 8.- Funciones básicas en R |
 
 ## Material extra:
 ### Glosario
