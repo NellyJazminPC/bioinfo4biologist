@@ -12,8 +12,7 @@ Da clink en los siguientes apartados y sigue las instrucciones:
 - Trabajaremos sobre la línea de comandos de Linux y explicaremos la estructura de directorios del sistema de archivos.
 - Algunos comandos esenciales de Linux demostrarán cómo acceder, manipular y editar archivos de texto.
 
-## Introducción a  la Bioinformática y Linux
-
+## [Introducción a  la Bioinformática](https://docs.google.com/presentation/d/e/2PACX-1vTJithkqakvslzBI_T1MJisIqemVi-fdU9uDC5SB6IR7GK3zc3oAEHFbPJiciHMbJT9yvuSovfOdTJk/pub?start=true&loop=false&delayms=60000)
 
 ## El sistema de archivos de Linux y la edición de texto
 ### 1.- [¿Qué es Linux y por qué usarlo?](Linux.md)
