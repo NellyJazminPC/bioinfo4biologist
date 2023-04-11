@@ -23,7 +23,7 @@ Conocer y aplicar las bases teóricas y prácticas de la bioinformática nivel b
 
 ## Temario
 
-#### [Sesión 1](SESION_1/SESION_1.md)
+#### [Sesión 1](SESION_1/README.md)
 
 1. Introducción a la Bioinformática
 
@@ -31,7 +31,7 @@ Conocer y aplicar las bases teóricas y prácticas de la bioinformática nivel b
 
 3. Manipulación y procesamiento de archivos
 
-#### [Sesión 2](SESION_2/SESION_2.md)
+#### [Sesión 2](SESION_2/README.md)
 
 4. Introducción a las variables de entorno e instalación de programas
 
