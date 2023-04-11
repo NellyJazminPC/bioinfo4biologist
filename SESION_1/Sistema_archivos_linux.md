@@ -57,14 +57,32 @@ El **directorio raíz** está representado simplemente por un carácter **/** cu
 
 Los directorios pueden variar un poco, pero incluyen lugares donde se almacena _software_ y _bibliotecas esenciales del sistema, archivos de configuración predeterminados para todas las cuentas de usuario, representaciones de archivos de dispositivos y medios conectados al sistema, software instalado para uso general y directorios de inicio de usuario_.  
 
-Cada usuario siempre tendrá un directorio de inicio.  
-
-
-Aquí es donde se almacenan sus archivos y directorios.  
+Cada usuario siempre tendrá un directorio de inicio.  Aquí es donde se almacenan sus archivos y directorios.  
 
 Por lo general, un usuario individual será la única persona que podrá escribir en su directorio de inicio, a menos que establezca **permisos** para que otros puedan hacerlo.   
 
 > **Aprenderemos sobre los permisos de archivo más adelante.**  
 
-
 ![image](https://user-images.githubusercontent.com/25624961/168963506-8907ef77-af87-4470-8477-329bd43838b4.png)
+
+
+-----------
+
+# Observa la siguiente imagen de la terminal
+
+![image](https://user-images.githubusercontent.com/25624961/231306097-134c5691-18c6-4725-a8fa-f0e1be126470.png)
+
+En la primera línea podemos identificar en primer lugar el nombre del usuario, en este caso es `jaz`. Después del símbolo **@** podemos encontrar el nombre del equipo, `n311`.
+
+Observa la imagen, el directorio en donde estamos ahora es `~`, lo que significa que estamos en el directorio del usuario **jaz** y dentro de **home**.
+
+El símbolo **$**, significa que la **terminal** esta implementando el interpretador (Bash) y que el usuario actual no tiene mayores privilegios, es decir, no es un **super usuario**. Si en lugar de **$** fuera **#**, significaría que estás como un **super usuario** ( modo **root**), lo cuál implicaría que tienes los permisos para desconfigurarlo todo! Cuidado!
+
+En la imagen se muestran algunos **comandos**, ¿cuáles son?
+
+-`pwd`
+
+-`date`
+
+-`echo`
+
