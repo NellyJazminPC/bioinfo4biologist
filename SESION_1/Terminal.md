@@ -27,11 +27,8 @@ En Ubuntu, encontramos al paquete de software de oficina de codigo abierto [**Op
 
 ## Elementos de la terminal:   
 
-- ventana de la terminal
-- símbolo del sistema 
-- íconos/menú de la terminal  
+![image](https://user-images.githubusercontent.com/25624961/231301221-52482150-fcd5-472f-8f8b-966180cd5e72.png)
 
-![image](https://user-images.githubusercontent.com/25624961/168962818-cb4fa5b9-5e12-456b-8b02-a5edbbe33c4c.png)
 
 
 
