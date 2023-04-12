@@ -13,9 +13,9 @@ Hay otras herramientas de edición de archivos disponibles, como Emacs, vi y pic
 
 **Prática** 
 
-Para demostrar la creación de un nuevo archivo en nano, abra una terminal y escriba el siguiente ejemplo para crear un nuevo archivo llamado `fruit.txt`  
+Para demostrar la creación de un nuevo archivo en nano, abra una terminal y escriba el siguiente ejemplo para crear un nuevo archivo llamado `fruta.txt`  
 
-Para demostrar la creación de un nuevo archivo en nano, abra una terminal y escriba el siguiente ejemplo para crear un nuevo archivo llamado `fruit.txt`  
+Para demostrar la creación de un nuevo archivo en nano, abra una terminal y escriba el siguiente ejemplo para crear un nuevo archivo llamado `fruta.txt`  
 
 ```bash
 nano fruta.txt
