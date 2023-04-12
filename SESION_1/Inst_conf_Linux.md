@@ -2,7 +2,7 @@
 
 Debe descargar archivos de datos que se utilizarán en diferentes ejercicios a lo largo del curso y proporcionar un entorno Linux o similar a Linux de su elección
 
-Descargue y descomprima el archivo de datos del curso BfB_Linux_Bash_R.zip de este [link](https://drive.google.com/file/d/1B_szK6TejbU8_ciyv9l3yvXagOXxtO5L/view?usp=sharing).  
+## Descargue y descomprima la carpeta de datos del curso *BfB_datos.zip* en este [link](https://drive.google.com/file/d/1mEcUvcyUYiGdv81ose5aDma6OCNctsLl/view?usp=sharing).  
 
 Encontrará tres carpetas que contienen datos para cada una de las tres partes del curso.
 
