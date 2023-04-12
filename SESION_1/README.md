@@ -19,7 +19,7 @@ Da clink en los siguientes apartados y sigue las instrucciones:
 ### 1.- [¿Qué es Linux y por qué usarlo?](Linux.md)
 ### 2.- [La terminal y la línea de comandos](Terminal.md)
 ### 3.- [El sistema de archivos de Linux: directorios y archivos](Sistema_archivos_linux.md)
-### 4.- [Conceptos básicos de la línea de comandos](https://drive.google.com/file/d/11GkVnLle3i96RNKEW12sZtv6_dH35THJ/view?usp=sharing)
+### 4.- [Conceptos básicos de la línea de comandos](linea_comandos.md)
 ### 5.- [Archivos, propiedad y permisos](Archivos_permisos.md)
 ### 6.- [Pistas, tips y atajos](https://drive.google.com/file/d/1Fwb7rzihKH6SpdX6pCLlJZqEppxmxBpI/view?usp=sharing)
 ### 7.- [Edición de texto y escritura de archivos](Edicion_texto.md)
