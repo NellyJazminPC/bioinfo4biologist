@@ -166,7 +166,7 @@ Primero crearemos una variable Shell y luego la transformaremos en una variable 
 Cree una nueva variable llamada **MY_VARIABLE** y proporcione un valor de **Linux_Variable**. 
 
 ```bash
-MY_VARIABLE=’Linux_Variable’
+MY_VARIABLE=Linux_Variable
 ```
 
 Verifique que la variable existe escribiendo: 
@@ -211,13 +211,14 @@ Esta vez, la variable ahora se mostrará como una variable de entorno: **Linux_V
 
 
 
-Tenga en cuenta que las variables creadas de esta manera solo estarán disponibles en la sesión actual y se perderán cuando cierre la sesión o abra un nuevo shell.  
+**Tenga en cuenta que las variables creadas de esta manera solo estarán disponibles en la sesión actual y se perderán cuando cierre la sesión o abra un nuevo shell.**  
+
+### Lo siguiente no es necesario que lo realice en su computadora personal
+
+**NOTA:** Para que las variables de entorno sean persistentes, deberá agregarlas a archivos específicos de Linux. 
 
 
-Para que las variables de entorno sean persistentes, deberá agregarlas a archivos específicos de Linux. 
-
-
-Edite el siguiente archivo con el editor nano.  
+Vamos a editar el siguiente archivo con el **editor nano**.  
 
 
 ```bash
