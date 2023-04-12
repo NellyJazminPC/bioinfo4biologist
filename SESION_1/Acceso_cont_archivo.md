@@ -22,7 +22,7 @@ Si se trata de un archivo muy largo, la salida ocupará más espacio del que pue
 Para mostrar el contenido de `Diamonds.csv`, escriba  
 
 ```bash
-cat Diamantes.csv
+cat Diamonds.csv
 ```
 
 
@@ -37,7 +37,7 @@ Puede desplazarse hacia arriba y hacia abajo por el archivo.
 
 Escriba
 ```bash
-less Diamantes.csv
+less Diamonds.csv
 ```
 
 Esto producirá una salida que llena la pantalla.  
