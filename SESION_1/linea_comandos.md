@@ -243,3 +243,6 @@ $ rm -r ../Manzanas/Prueba
 [Guía con más opciones para usar `tar`](http://www.tecmint.com/18-tar-command-examples-in-linux/)
 
 `tar` tiene muchas opciones, lo importante es saber que existen y cómo buscarlas en el manual.
+
+
+[Video de repaso para conceptos básicos de la línea de comandos](https://drive.google.com/file/d/11GkVnLle3i96RNKEW12sZtv6_dH35THJ/view?usp=sharing)
