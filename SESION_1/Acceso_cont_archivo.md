@@ -10,7 +10,7 @@ Navegue a su carpeta descargada y descomprimida usando el comando `cd` (change d
 Compruebe que el archivo está en el directorio. 
 
 ```bash
-ls
+$ls
 Diamonds.csv
 ```
 
