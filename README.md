@@ -72,4 +72,10 @@ Para ir comenzando es importante revisar el siguiente glosario con algunos de lo
 - [Glosario](Glosario.md)
 - [Glossary](Glossary.md)
 
+
+### Sitios recomendados y tomados como referencia:
+
+- Curso **Bioinformatics for Biologists** (futurelearn.com)
+
 ### [Otros sitios recomendados](https://github.com/NellyJazminPC/bioinfo4biologist/blob/main/Otros_recursos_recomendados.md)
+
