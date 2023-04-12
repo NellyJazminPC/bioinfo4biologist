@@ -13,7 +13,7 @@ Da clink en los siguientes apartados y sigue las instrucciones:
 - Algunos comandos esenciales de Linux demostrarán cómo acceder, manipular y editar archivos de texto.
 
 ## Introducción a  la Bioinformática
-### [Presentación "Bioinformática, si no es ahora será mañana"](https://docs.google.com/presentation/d/e/2PACX-1vTJithkqakvslzBI_T1MJisIqemVi-fdU9uDC5SB6IR7GK3zc3oAEHFbPJiciHMbJT9yvuSovfOdTJk/pub?start=true&loop=false&delayms=60000)
+### 1.- [Presentación "Bioinformática, si no es ahora será mañana"](https://docs.google.com/presentation/d/e/2PACX-1vTJithkqakvslzBI_T1MJisIqemVi-fdU9uDC5SB6IR7GK3zc3oAEHFbPJiciHMbJT9yvuSovfOdTJk/pub?start=true&loop=false&delayms=60000)
 
 ## El sistema de archivos de Linux y la edición de texto
 ### 1.- [¿Qué es Linux y por qué usarlo?](Linux.md)
