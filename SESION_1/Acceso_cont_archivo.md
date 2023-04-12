@@ -4,6 +4,7 @@ Aquí hay algunos comandos que puede usar para mostrar el contenido del archivo.
 
 En esta sección se utilizará el archivo `Diamonds.csv` de la carpeta que se descargo al inicio. 
 
+-Si no lo hiciste, aquí dejo nuevamente el [link](https://drive.google.com/file/d/1mEcUvcyUYiGdv81ose5aDma6OCNctsLl/view?usp=sharing)
 
 Navegue a su carpeta descargada y descomprimida usando el comando `cd` (change directory/cambiar directorio). 
 
