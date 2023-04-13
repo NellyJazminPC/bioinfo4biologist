@@ -201,12 +201,15 @@ printenv MI_VARIABLE
 Esta vez, la variable ahora se mostrará como una variable de entorno: **Linux_Variable**  
 
 
-
 **Tenga en cuenta que las variables creadas de esta manera solo estarán disponibles en la sesión actual y se perderán cuando cierre la sesión o abra un nuevo shell.**  
 
-### Lo siguiente no es necesario que lo realice en su computadora personal
 
-**NOTA:** Para que las variables de entorno sean persistentes, deberá agregarlas a archivos específicos de Linux. 
+----------------
+
+**NOTA:** Lo siguiente no es necesario que lo realice en su computadora personal
+
+
+Para que las variables de entorno sean persistentes, deberá **agregarlas a archivos específicos de Linux**. 
 
 
 Vamos a editar el siguiente archivo con el **editor nano**.  
