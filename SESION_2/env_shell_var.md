@@ -1,19 +1,10 @@
 # Introducción a las variables de entorno (Environment variables) 
 
-En los sistemas operativos de computadora, un entorno (environment) es un área que contiene información sobre el comportamiento de programas y aplicaciones.  
+En los sistemas operativos de computadora, un **entorno** (environment) es un área que contiene información sobre el comportamiento de programas y aplicaciones. Las **variables de entorno** de Linux son utilizadas por las aplicaciones para obtener información sobre el entorno y cada variable de entorno es una variable con un nombre y un valor asociado.  
 
-Las variables de entorno de Linux son utilizadas por las aplicaciones para obtener información sobre el entorno, y cada variable de entorno es una variable con un nombre y un valor asociado.  
+Cada vez que se configura el entorno, se crea una nueva sesión de **shell**, y esto se puede usar como una experiencia de aprendizaje para ver cómo al cambiar las variables del entorno de Linux se pueden cambiar cosas como la apariencia del shell. Por ejemplo, se pueden establecer o cambiar rutas a archivos ejecutables, configuraciones de diseño de teclado y el directorio de inicio predeterminado.
 
-Cada vez que se configura el entorno, se crea una nueva sesión de shell, y esto se puede usar como una experiencia de aprendizaje 
-para ver cómo cambiar las variables del entorno de Linux puede cambiar cosas como la apariencia del shell, 
-crear rutas a archivos ejecutables, configuraciones de diseño de teclado y definiendo el directorio de inicio predeterminado, 
-por ejemplo.
-
-Las variables tienen el siguiente formato y, por convención, tienen nombres en mayúsculas.  
-
-Aunque distinguen entre mayúsculas y minúsculas, es posible tener nombres en minúsculas.  
-
-Además, no hay espacio alrededor del símbolo igual =  
+Las variables tienen el siguiente formato y por convención tienen nombres en mayúsculas. Además, no hay espacio alrededor del símbolo igual (**=**).  
 
 
 **KEY=value KEY=”Another value”** 
@@ -30,14 +21,14 @@ Si asigna varios valores a una variable, sepárelos con el caractér de dos punt
 ### Hay dos tipos de variables: 
 
 
-Las **variables de entorno** (Environment variables) abarcan todo el sistema y son heredadas por todos los procesos y shells del sistema. 
+Las **variables de entorno** (environment variables) abarcan todo el sistema y son heredadas por todos los procesos y shells del sistema. 
 
 
 <div align="center"><img src="https://user-images.githubusercontent.com/25624961/170337787-6598ef36-bb66-4ec6-b899-7556f99e87d0.png" width="600"></div>
 
 
 
-Las **variables de shell** solo se aplican internamente a la instancia de shell actual. 
+Las **variables de shell** solo se aplican internamente a la instancia del shell actual. 
 
 
 ### ¿Cómo usamos los comandos de Linux para enumerar y establecer variables de entorno? 
