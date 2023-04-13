@@ -1,30 +1,21 @@
 # Procesamiento de archivos con AWK
 
-`AWK` es un lenguaje de programación. Lleva el nombre de sus tres desarrolladores: Alfred Aho, Peter J Weinberger y Brian KernIghan.  
+`AWK` es un lenguaje de programación. Lleva el nombre de sus tres desarrolladores: Alfred Aho, Peter J Weinberger y Brian KernIghan. Es particularmente útil para procesar archivos de texto y extraer datos, especialmente cuando un archivo está dividido en columnas o delimitado por un carácter específico (por ejemplo, una coma). 
 
-Es particularmente útil para procesar archivos de texto y extraer datos, especialmente cuando un archivo está dividido en columnas o delimitado por un carácter específico (por ejemplo, una coma). 
+`AWK` es un paquete estándar en la mayoría de las versiones de Linux, así como en MacOS, generalmente se escribe en mayúsculas aunque **el comando en sí está en minúsculas**.  
 
-`AWK` es un paquete estándar en la mayoría de las versiones de Linux, así como en Mac OSX.  
-
-`AWK` generalmente se escribe en mayúsculas, aunque **el comando en sí está en minúsculas**.  
-
-`AWK` se puede usar para escribir scripts y programas complejos pero, pero por ahora, lo usaremos directamente en la línea de comandos. Este comando, eee un archivo línea por línea y divide cada línea en columnas según un carácter delimitador, el delimitador predeterminado es un carácter de espacio único.  
+`AWK` se puede usar para escribir scripts y programas complejos pero, por ahora, lo usaremos directamente en la línea de comandos. Este comando, es un archivo línea por línea y divide cada línea en columnas según un carácter delimitador, el delimitador predeterminado es un carácter de espacio único.  
 
 
-Para los comandos de ejemplo que se dan a continuación, trabajaremos con dos archivos de la carpeta descargada al inicio. Estos son `Diamonds.csv`, que contiene valores separados por comas y `Diamonds_fix.txt`, que está delimitado con el carácter de tabulación. 
+Para los comandos de ejemplo que se dan a continuación, trabajaremos con dos archivos de la carpeta descargada al inicio. Estos son `Diamonds.csv`, que contiene valores separados por comas y `Diamonds_fix.txt`, que está delimitado con tabulaciones. Ambos archivos contienen los mismos datos en 10 columnas: **carat, cut, color, clarity, depth, table, price, "x", "y" y "z"**.  
 
-Ambos archivos contienen los mismos datos en 10 columnas: carat, cut, color, clarity, depth, table, price, "x", "y" y "z".  
+Los últimos 3 (**x**, **y** y **z**) se relacionan con las dimensiones del diamante en cuestión. Para seguir los comandos a continuación, cambie el directorio a la ruta que contiene los datos de su curso. 
 
-Los últimos 3 (**x**, **y** y **z**) se relacionan con las dimensiones del diamante en cuestión.  
-
-Para seguir los comandos a continuación, cambie el directorio al directorio que contiene los datos de su curso. Antes de comenzar, puede ser útil ejecutar: 
+Antes de comenzar, puede ser útil revisar el manual del comando para ver las opciones disponibles para AWK y también estudiar cómo se ven algunos de los caracteres delimitadores de uso común.  
 
 ```bash
 man awk
 ```
-
-para ver las opciones disponibles para AWK y también ver cómo se ven algunos de los caracteres delimitadores de uso común.  
-
 
 
 **El primer comando a ejecutar es:**  
@@ -33,8 +24,7 @@ para ver las opciones disponibles para AWK y también ver cómo se ven algunos d
 awk -F”\t” ‘{print $1}’ Diamonds_fix.txt
 ```
 
-Esto imprimirá el valor en la primera columna del archivo Diamonds_fix.txt. 
-
+Esto imprimirá el valor en la primera columna del archivo **Diamonds_fix.txt**. 
 
 
 ### Una pequeña explicación:  
@@ -48,6 +38,7 @@ Para cada línea del archivo, `AWK` ejecutará cualquier comando que esté conte
 
 Es posible que desee cambiar este comando para que se ejecute en el archivo `Diamonds.csv` cambiando el delimitador en la opción **-F**.  
 
+-------------
 
 Al igual que `grep`, `AWK` se puede usar para filtrar archivos línea por línea, según el texto que contienen. Sin embargo, como `AWK` divide las líneas en columnas según el delimitador, hay **más precisión disponible**. `AWK` puede imprimir solo líneas que tienen un valor específico en una columna específica. Por ejemplo: 
 
@@ -55,7 +46,7 @@ Al igual que `grep`, `AWK` se puede usar para filtrar archivos línea por línea
 awk -F”\t” ‘$2==”Ideal” {print $0}’ Diamonds_fix.txt
 ```
 
-Esto imprime solo las líneas de Diamonds_fix.txt en las que la columna 2 (corte) contiene el valor "Ideal".
+Esto imprime solo las líneas de **Diamonds_fix.txt** en las que la columna 2 (**corte**) contiene el valor "Ideal".
 
 ### Alguna explicación: 
 
