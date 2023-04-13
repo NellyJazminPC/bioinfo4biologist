@@ -10,7 +10,18 @@ El comando `sort` que significa **ordenar**, ordena una lista de elementos alfab
 
 Primero, usando el editor `nano` (o cualquier otro editor de texto que prefieras) crea un archivo de texto con el siguiente contenido (una fruta por línea):    
 
-orange pear apple banana grape satsuma melon pomegranate banana grape.  
+```
+orange 
+pear 
+apple 
+banana 
+grape 
+satsuma 
+melon 
+pomegranate 
+banana 
+grape 
+```
 
 Nómbrelo `fruit.txt`
 
@@ -36,7 +47,7 @@ Puede **invertir** el orden de clasificación con la opción **-r**
 sort -r fruit.txt
 ```
 
-También es posible codificar el orden de las líneas con la opción **-R**  
+También es posible generar un orden aleatorio de las líneas con la opción **-R**  
 
 ```bash
 sort -R fruit.txt
@@ -95,9 +106,9 @@ sort fruit.txt | uniq -id | uniq -f 1
 ```
 
 
-Esto listará los nombres de frutas únicas en `fruit.txt` (`uniq -id`). Luego, esta salida se canaliza a `uniq -f 1`, que ignora el primer campo en cada línea de entrada al hacer comparaciones (`-f 1` es igual al primer campo).  
+Esto enlistará los nombres de frutas repetidas en `fruit.txt` (`uniq -id`). Luego, esta salida se canalizará a `uniq -f 1`, que ignora el primer campo en cada línea de entrada al hacer comparaciones (`-f 1` es igual al primer campo).  
 
-Para obtener más información sobre sort y uniq, visite https://www.linode.com/docs/guides/manipulate-lists-with-sort-and-uniq/  
+Para obtener más información sobre **sort** y **uniq**, visite https://www.linode.com/docs/guides/manipulate-lists-with-sort-and-uniq/  
 
 <div align="center"><img src="https://user-images.githubusercontent.com/25624961/169892272-8d2b3294-b50b-4bc8-a02a-0d89f4a546d7.png" width="400"></div>
 
