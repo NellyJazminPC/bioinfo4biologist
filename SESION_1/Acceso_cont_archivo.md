@@ -105,7 +105,7 @@ tail -2 Diamonds.csv
 ![image](https://user-images.githubusercontent.com/25624961/169719512-8d264f4b-e8fc-4f35-ba93-b3fbbc5eeaea.png)
 
 
-### Resumen: :D
+### Resumen:
 <img src= "https://user-images.githubusercontent.com/25624961/169719589-e12c6af8-8d8f-4a45-b704-eb34505ab7ac.png" width= "500">
 
 
