@@ -2,9 +2,13 @@
 
 Una cosa que debemos hacer a menudo es verificar si un archivo o conjunto de archivos en particular contiene una cadena de caracteres.  
 
-Este proceso se conoce como **coincidencia de patrones** (pattern matching). Usando la línea de comando, esto se hace con un comando llamado `grep`.  
+Este proceso se conoce como **coincidencia de patrones** (pattern matching). 
 
-El nombre deriva del antiguo editor de Unix, ed, y significa **"búsqueda global de una expresión regular e impresión de líneas coincidentes"** o en inglés “**g**lobally search for a **r**egular **e**xpression and **p**rint matching lines”. 
+Usando la línea de comando, esto se hace con el comando `grep`.  
+
+### `grep`
+
+El nombre deriva del antiguo editor de Unix, **ed**, y significa **"búsqueda global de una expresión regular e impresión de líneas coincidentes"** o en inglés “**g**lobally search for a **r**egular **e**xpression and **p**rint matching lines”. 
 
 Una **expresión regular** (regular expression o **RegEx**) es una cadena de caracteres que define un patrón de búsqueda. 
 
@@ -16,12 +20,12 @@ Las expresiones regulares pueden volverse increíblemente complejas, involucrand
 **En su forma más simple, `grep` se ejecuta así en un solo archivo:** 
 
 ```bash
-grep -F querystring filename.txt
+grep -F _querystring_ filename.txt
 ```
 
 Como salida, muestra una lista línea por línea de todas las líneas que contienen la cadena de consulta de texto.  
 
-Tenga en cuenta que si la cadena de consulta incluye caracteres de espacio, se deben colocar comillas en cualquiera de sus extremos.  
+Tenga en cuenta que si la cadena de consulta incluye **caracteres de espacio**, se deben colocar **comillas** en cualquiera de sus extremos.  
 
 Además, la opción **-F** significa que estamos buscando **cadenas fijas** en lugar de expresiones regulares. Esto puede ser omitido por usuarios avanzados que busquen expresiones regulares complicadas. 
 
