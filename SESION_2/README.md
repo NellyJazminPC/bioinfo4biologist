@@ -11,6 +11,6 @@
 
 ## Introducción a Git y Github
 ### 1.- [Un breve tutorial de Github Desktop](GitHub/README.md)
-### 2.- [Descripción de los comandos básicos para Git]()
+### 2.- [Descripción de los comandos básicos - Terminal](GitHub/comandos.md)
 
 ## Escribir y documentar scripts informáticos
