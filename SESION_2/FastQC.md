@@ -93,3 +93,7 @@ fastqc ../181004_curso_calidad_datos_NGS/fastq_raw/*.fastq.gz -o .
 ## Otra forma de instalación con Conda
 
 En la página https://anaconda.org/bioconda/fastqc podemos encontrar algunas líneas de comandos que desde la terminal nos permitiran instalar **FastQC**
+-[Video tutorial](https://www.youtube.com/watch?v=Umo1pRuT0OI)
+  
+  
+  
