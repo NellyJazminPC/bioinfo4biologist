@@ -19,8 +19,8 @@ Las expresiones regulares pueden volverse increíblemente complejas, involucrand
   
 **En su forma más simple, `grep` se ejecuta así en un solo archivo:** 
 
-```bash
-grep -F _querystring_ filename.txt
+```
+grep -F querystring filename.txt
 ```
 
 Como salida, muestra una lista línea por línea de todas las líneas que contienen la cadena de consulta de texto.  
@@ -37,6 +37,152 @@ Ejecute lo siguiente para ver todas las opciones disponibles:
 ```bash
 man grep
 ```
+---------
+
+## Pongamos a prueba a **grep**
+
+- Crea un archivo **.txt** con nano y escribe las siguientes lineas
+- Recuerda dejar los espacios como se indican a continuación:
+
+```bash
+Biologia es Genialx1000
+biologia es genialx1000
+genialx1000 es biologia
+genialx1000 es Biologia
+genialx1000
+
+biologia
+biologia es biologia
+
+Masa
+Mesa
+MAsa
+MEsa
+
+Linux es un gran SO
+Me gusta Linux Ubuntu 22
+Este es un numero aleatorio 1516548132
+Algunas veces el teclado se me traba como en BIologiA
+
+```
+Primero revisar (imprime) todo el archivo que acabas de crear
+
+```bash
+cat words.txt 
+```
+
+La primera palabra que buscarás es **biologia**
+
+```bash
+grep biologia words.txt 
+```
+
+Si quieres que no distinga entre mayúsculas y minúsculas puedes usar la opción **-i**
+
+```bash
+grep -i biologia words.txt 
+```
+
+Ahora empecemos a usar expresiones regulares:
+
+```bash
+grep [Bb]iologia words.txt 
+```
+¿Qué hizo **[Bb]**?
+
+Podemos seguir buscando otras palabras, ahora prueba con **mesa**, pero da la indicación de que no distinga entre mayúsculas y minúsculas:
+
+```bash
+grep -i mesa words.txt 
+```
+Y ahora con **masa**
+
+```bash
+grep -i masa words.txt 
+```
+
+Apliquemos ahora lo aprendido y usa una expresión regular para que obtengas todas las palabras que empiecen con **M** pero que puedan continuar con **E** o **e** y que terminen con **sa**
+
+```bash
+#Para obtener MEsa y Mesa
+
+grep M[Ee]sa words.txt 
+
+#Para obtener Masa y MAsa
+
+grep M[aA]sa words.txt 
+```
+¿Qué pasa si utilizas la línea `grep M*sa words.txt`
+
+Podría ser lo mismo que utilizar `grep M[EeAa]sa words.txt` ?
+
+Revisa nuevamente tu archivo .txt
+
+```bash
+cat words.txt 
+```
+
+Ahora, que ocurre con este caracter **^** ?
+Es una expresión regular que indica **al inicio de la línea**
+
+```bash
+grep ^Biologia words.txt 
+```
+¿Qué observas? Hizo distinción entre mayúsculas y minúsculas?
+
+```bash
+grep ^[Bb]iologia words.txt 
+```
+
+Probemos otro caracter, **$**. 
+El **$** indica que es **el final de la línea**
+
+```bash
+grep [Bb]iologia$ words.txt 
+```
+
+Prueba las siguientes lineas de comandos y observa cuál es la diferencia
+
+```bash
+
+grep biologia$ words.txt 
+
+grep ^biologia$ words.txt 
+```
+
+¿Podemos utilizar grep para buscar patrónes de números?
+
+Prueba las siguientes líneas:
+
+```bash
+grep [0-9] words.txt 
+#Ahora usemos $, ¿cambio el número de lineas?
+grep [0-9]$ words.txt 
+#Y si agregamos más [] a la expresión regular?
+grep [0-9][0-9][0-9]$ words.txt 
+```
+
+Vuelva a imprimir el archivo original
+
+```bash
+cat words.txt 
+```
+
+Último tip para este mini tutoral de **grep**
+
+¿Qué ocurre con la siguiente línea de comando?
+
+```bash
+grep ^$ words.txt 
+```
+¿y si utilizamos la opción **-v**?
+
+```bash
+grep -v ^$ words.txt 
+```
+
+
+
 
 ## Ejercicio: 
 
