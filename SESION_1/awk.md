@@ -23,13 +23,20 @@ man awk
 ```bash
 awk -F”\t” ‘{print $1}’ Diamonds_fix.txt
 ```
+¿Qué sucedío?
 
-Esto imprimirá el valor en la primera columna del archivo **Diamonds_fix.txt**. 
+Ahora prueba la siguiente línea de comando y observa el resultado, ¿qué cambio?
+
+```bash
+awk -F"\t" '{print $1}' Diamonds_fix.txt
+```
+
+Esto imprimirá el valor de la primera columna del archivo **Diamonds_fix.txt**. 
 
 
 ### Una pequeña explicación:  
 
-- La opción **-F”\t”** le dice a `AWK` que el delimitador es una pestaña, que generalmente se representa como **\t** en la línea de comando.  
+- La opción **-F"\t"** le dice a `AWK` que el delimitador es una pestaña, que generalmente se representa como **\t** en la línea de comando.  
 
 - Cada columna delimitada está representada por un símbolo **$** seguido de un número. El número representa el número de columna, por lo que **$1** es la columna 1, **$2** es la columna 2, etc. **$0** imprime la línea completa. 
 
@@ -43,7 +50,7 @@ Es posible que desee cambiar este comando para que se ejecute en el archivo `Dia
 Al igual que `grep`, `AWK` se puede usar para filtrar archivos línea por línea, según el texto que contienen. Sin embargo, como `AWK` divide las líneas en columnas según el delimitador, hay **más precisión disponible**. `AWK` puede imprimir solo líneas que tienen un valor específico en una columna específica. Por ejemplo: 
 
 ```bash
-awk -F”\t” ‘$2==”Ideal” {print $0}’ Diamonds_fix.txt
+awk -F"\t" '$2=="Ideal" {print $0}' Diamonds_fix.txt
 ```
 
 Esto imprime solo las líneas de **Diamonds_fix.txt** en las que la columna 2 (**corte**) contiene el valor "Ideal".
@@ -58,27 +65,28 @@ En general, los comandos `AWK` se componen de dos partes, un patrón, como '$2==
 
 El patrón define las líneas a las que se aplica la acción. De hecho, podríamos pasar por alto la acción en este ejemplo, ya que `AWK`, por defecto, imprimirá la línea completa como salida. Asimismo, como vimos en el primer ejemplo, si se omite el patrón, `AWK` realizará la acción en cada línea. 
 
-Los patrones se pueden combinar usando el símbolo **&&** (para y) para que una línea se imprima solo si se cumplen dos o más condiciones. Por ejemplo:  
+Los patrones se pueden combinar usando el símbolo **&&** (**y**), para que una línea se imprima solo si se cumplen dos o más condiciones. Por ejemplo:  
 
 ```bash
-awk -F”\t” ‘$2==”Ideal” && $4==”SI2”’ Diamonds_fix.txt
+awk -F"\t" '$2=="Ideal" && $4=="SI2"' Diamonds_fix.txt
 ```
 
-Este comando imprimirá todas las líneas en las que la columna 2 tenga el valor 'Ideal' y la columna 4 tenga el valor 'SI2'. 
+Este comando imprimirá todas las líneas en las que la columna 2 tenga el valor 'Ideal' **y** la columna 4 tenga el valor 'SI2'. 
 
 
-Del mismo modo, usando el **||** símbolo (para o), podemos imprimir si se cumple cualquiera de dos o más condiciones. Por ejemplo:  
+Del mismo modo, usando el **||** símbolo (**o**), podemos imprimir **si se cumple cualquiera de dos o más condiciones**. Por ejemplo:  
 
 ```bash
-awk -F”\t” ‘$2==”Ideal” || $4==”SI2”’ Diamonds_fix.txt
+awk -F"\t" '$2=="Ideal" || $4=="SI2"' Diamonds_fix.txt
 ```
+----------------
 
 Esto imprimirá una línea, la columna 2 tiene el valor 'Ideal' o la columna 4 tiene el valor 'SI2'.  
 
 Además de cadenas, `awk` también puede filtrar valores numéricos. Por ejemplo:  
 
 ```bash
-awk -F”\t” ‘$1>1’ Diamonds_fix.txt
+awk -F"\t" '$1>1' Diamonds_fix.txt
 ```
 
 Esto imprimirá todas las líneas en las que la primera columna tenga un valor mayor que 1. 
@@ -86,10 +94,10 @@ Esto imprimirá todas las líneas en las que la primera columna tenga un valor m
 Notará que la primera línea de valores de encabezado está incluida en esto. Podemos omitir esto simplemente agregando la condición 'FNR>1': 
 
 ```bash
-awk -F”\t” ‘FNR>1 && $1>1’ Diamonds_fix.txt
+awk -F"\t" 'FNR>1 && $1>1' Diamonds_fix.txt 
 ```
 
-FNR representa el número de línea actual, por lo que le pedimos a `AWK` que imprima la línea si es mayor que 1 (es decir, omite la línea 1).  
+**FNR** representa el número de línea actual, por lo que le pedimos a `AWK` que imprima la línea si es mayor que 1 (es decir, omite la línea 1).  
 
 <div align="center"><img src="https://user-images.githubusercontent.com/25624961/170142733-a9183055-47ee-44e6-8f92-acad3b566a4c.png" width="600"></div>
 
