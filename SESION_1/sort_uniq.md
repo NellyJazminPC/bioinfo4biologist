@@ -11,15 +11,15 @@ El comando `sort` que significa **ordenar**, ordena una lista de elementos alfab
 Primero, usando el editor `nano` (o cualquier otro editor de texto que prefieras) crea un archivo de texto con el siguiente contenido (una fruta por línea):    
 
 ```
-orange 
-pear 
-apple 
-banana 
-grape 
-satsuma 
-melon 
-pomegranate 
-banana 
+orange
+pear
+apple
+banana
+grape
+satsuma
+melon
+pomegranate
+banana
 grape 
 ```
 
