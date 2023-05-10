@@ -14,13 +14,13 @@ Lo cual abrirá una pantalla de `vim`. Edita tu nombre de usuario y cuenta de co
 
 `git config --global user.name "Mi_nombre"`
 
-Donde el texto entre comillas son tus datos.
+Donde el texto entre comillas " " son donde pondrás tus datos.
 
 Comprueba que tu dirección es la correcta con:
 
 `git config user.email`
 
-Debe mostrarse tu dirección correcta.
+Debe mostrar tu dirección correcta.
 
 
 [Referencia de lo anterior](https://help.github.com/articles/setting-your-commit-email-address-in-git/)
@@ -32,7 +32,7 @@ Debe mostrarse tu dirección correcta.
 Te permite crear un repo desde tu disco local. En la terminal escribe:
 
 ```sh
-mkdir repo_name # crear un directorio en tu disco local
+mkdir repo_name # crea un directorio en tu disco local
 ```
 
 ```sh
@@ -40,11 +40,11 @@ cd repo_name
 ```
 		
 ```sh
-git init # transformar ese directorio en un repositorio git
+git init # transforma ese directorio en un repositorio git
 ```
 
 ```sh
-git status # verificar que el repositorio ha sido creado
+git status # verifica que el repositorio ha sido creado
 ```
 
 Para conectar ese nuevo repostorio a github:
@@ -68,34 +68,40 @@ Te permite copiar un repositorio que ya existe. Cada versión de cada archivo de
 
 ### CUIDADO en dónde ejecutas `git clone`
 Tu directorio de trabajo (_working directory_), será el lugar a dónde se descargue y conecte el repositorio que estás clonando)
+> Después del **$** están los comandos utilizados, en las siguientes líneas se muestra el resultado de ejecutar esos comandos.
 
 ```sh
-git clone https://github.com/NellyJazminPC/Choco
+$ git clone https://github.com/NellyJazminPC/Choco
 Cloning into 'Choco'...
 remote: Counting objects: 3, done.
 remote: Compressing objects: 100% (2/2), done.
 Unpacking objects: 100% (3/3), done.
 remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
-
 ```
 
-Para poder hacer los siguientes comandos **debemos estar en el directorio del repo**. Es decir, entrar al directorio de Choco.
+Para poder hacer los siguientes comandos **debemos estar en el directorio del repo**. Es decir, hay que entrar al directorio de _Choco_.
 
 #### `git status`
-Es para saber en qué rama (_branch_) estas trabajando y si tienes archivos que te falte "guardar" (commit) o actualizar (pull). Por ejemplo, si lo haces cuando acabas de clonar un repositorio, debe verse algo así:
+Es para saber en qué rama (_branch_) estas trabajando y si tienes archivos que te falte guardar (commit) o actualizar (pull). Por ejemplo, si lo haces cuando acabas de clonar un repositorio, debe verse algo así:
 
-```
-$ git status                           []
+```sh
+$ git status
 On branch main
 Your branch is up-to-date with 'origin/main'.
 nothing to commit, working tree clean
 ```
 
 #### `git add`
-Te permite agregar un archivo que no existía en el repositorio o prepara las modificaciones a archivos existentes. Esto no lo "guarda" (commit), solo hace que "lo sigas". Si modificas un archivo es necesario que vuelvas a dar `add`.
+Te permite agregar un archivo que no existía en el repositorio o prepara las modificaciones a archivos existentes. Esto no lo "guarda" (eso es con el comando `commit` que veremos más adelante), solo hace que "lo sigas". Si modificas un archivo es necesario que vuelvas a dar `git add`.
 
+Hagamos una prueba, dentro del repositorio crea un archivo nuevo
+
+```sh
+touch ejemplo.txt
 ```
-$ touch ejemplo.txt
+Ahora observa si hay algún cambio en el _status_ de git
+
+```sh
 $ git status
 On branch main
 Your branch is up-to-date with 'origin/main'.
@@ -105,14 +111,21 @@ Untracked files:
 	ejemplo.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
-$ git add ejemplo.txt
+```
+
+Ahora prueba con git add para marcar este archivo y hacer su seguimiento, todo con el fin de subirlo al repositorio en línea.
+
+```sh
+git add ejemplo.txt
 ```
 
 
 #### `git commit`
-Confirma y agrega los cambios a la branch en la que estas trabajando. Utiliza la flag `-m` para escribirun mensaje breve. Si no lo haces se abrirá un editor de texto donde puedes describir brevemente el cambio que hiciste. Si tu editor es Vim, puedes guardar y salir con `:wq`.
+Confirma y agrega los cambios a la _branch_ en la que estas trabajando. Utiliza la flag `-m` para escribir un mensaje breve, basicamente es una descripción en pocas palabras del cambio que hiciste para mayor organización y poder volver a buscar este cambio si es necesario. Si no lo haces, se abrirá un editor de texto donde puedes describir brevemente el cambio que hiciste. Si tu editor es Vim, puedes guardar y salir con `:wq`.
 
-```
+Ejemplo:
+
+```sh
 $ git commit -m "agregar archivo ejemplo"
 [main 79fce15] agregar archivo ejemplo
  1 file changed, 0 insertions(+), 0 deletions(-)
@@ -122,10 +135,22 @@ $ git commit -m "agregar archivo ejemplo"
 #### `git diff`
 Para ver los cambios que se hicieron a un archivo.
 
+Supongamos que ya tenemos un archivo de texto nombrado como **ejemplo.txt**, en el cuál el texto adentro de él es *bla bla bla*. Ahora vamos a modificar este archivo, en específico, vamos a reescribir su contenido con el símbolo **>**.
+
+
+```sh
+echo "el mundo es bello" > ejemplo.txt #con este comando reescribimos todo lo que había en ejemplo.txt por la frase "el mundo es bello"
 ```
-$ echo "el mundo es bello" > ejemplo.txt
+Para verificar que el cambio se ha realizado prueba con **cat**
+
+```sh
 $ cat ejemplo.txt
 el mundo es bello
+```
+
+Ahora revisa el estatus
+
+```sh
 $ git status
 On branch main
 Your branch is up-to-date with 'origin/main'.
@@ -136,6 +161,12 @@ Changes not staged for commit:
 	modified:   ejemplo.txt
 
 no changes added to commit (use "git add" and/or "git commit -a")
+```
+Indica que hay una **modificación**
+
+Ahora probemos con **git diff**
+
+```sh
 $ git diff ejemplo.txt
 diff --git a/ejemplo.txt b/ejemplo.txt
 index 8d269c1..0dc4fee 100644
@@ -146,12 +177,16 @@ index 8d269c1..0dc4fee 100644
 +el mundo es bello
 ```
 
+Como se observa, con **-** se indica lo que quitó del archivo **ejemplo.txt** y en **+** se muestra lo que se agregó.
+
 
 
 #### `git rm`
-Si quieres borrar un archivo **que ya había formado parte de un commit** no sólo de tu compu sino del sistema de versiones de git, lo mejor es NO utilizar `rm`, sino `git rm`. Ejemplo:
+Si quieres borrar un archivo **que ya había formado parte de un commit** no sólo de tu compu sino del sistema de versiones de git, lo mejor es **NO utilizar `rm`, sino `git rm`**. 
 
-```
+Ejemplo:
+
+```sh
 $ touch ejemplo2.txt
 $ git add ejemplo2.txt
 $ git status
@@ -164,6 +199,10 @@ Changes to be committed:
 	new file:   ejemplo2.txt
 $ git add ejemplo2.txt
 $ git commit -m added ejemplo2
+```
+Hasta aquí todo bien, pero ahora queremos eliminar ese archivo sin embargo como ya hemos ejecutado `git commit` aunque lo borremos seguira en el estatus de git, por lo tanto, lo mejor es usar `git rm`
+
+```sh
 $ git rm ejemplo2.txt
 $ git status
 On branch main
