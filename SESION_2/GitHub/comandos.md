@@ -200,7 +200,7 @@ Changes to be committed:
 $ git add ejemplo2.txt
 $ git commit -m added ejemplo2
 ```
-Hasta aquí todo bien, pero ahora queremos eliminar ese archivo sin embargo como ya hemos ejecutado `git commit` aunque lo borremos seguira en el estatus de git, por lo tanto, lo mejor es usar `git rm`
+Hasta aquí todo bien, pero ahora queremos eliminar ese archivo, sin embargo como ya hemos ejecutado `git commit` aunque lo borremos seguirá en el estatus de _git_, por lo cual, es mejor usar `git rm`
 
 ```sh
 $ git rm ejemplo2.txt
@@ -217,11 +217,13 @@ Changes to be committed:
 
 #### `git push`
 
-Una vez que quieres integrar tus cambios a una rama, este comando te permite fusionar ramas. Debes decirle el origen (rama donde hiciste los commits) y el destino (por ejemplo main u otra rama).
+Una vez que quieres integrar tus cambios a una _rama_ (branch), el comando `push` te permite fusionar ramas. Debes incluir en tu orden el origen (la _rama_ donde hiciste los _commits_) y el destino (por ejemplo _main_ u otra _rama_).
 
-**CUIDADO** no podrán hacer `push` porque no son propietarios de este repo. Para ello deberían hacer primero un `pull request`.
+**CUIDADO** para ejecutar exitosamente `push` necesitas ser propietario de ese repo. Para ello, primero es necesario hacer un `pull request`.
 
-```
+Cuando se ejecuta correctamente `git push` obtendremos una descripción como la que se muestra a continuación:
+
+```sh
 $ git push origin main
 Counting objects: 3, done.
 Delta compression using up to 4 threads.
@@ -232,22 +234,24 @@ To https://github.com/NellyJazminPC/Choco
    72129b3..79fce15  main -> main
 ```
 
-Nota: puedes agregar la flag `-u` para establecer `origin main` (o lo que sea) como el default y solo tener que hacer `git push` en un futuro.
+Nota: puedes agregar la flag `-u` para establecer `origin main` como el default y solo tener que hacer `git push` en un futuro.
 
 
 #### `git pull`
-Actualiza la copia del repositorio local con respecto a la rama remota. Es decir
+Actualiza la copia del repositorio local con respecto a la rama remota. Esta opción es un muy util para llevar un control de los cambios tanto en tu repo local (es tu computadora) como en el que tienes en Github.
 
 
-```
-$ git pull                             []
+```sh
+$ git pull                            
 Already up-to-date.
 ```
 
 
 #### `git fetch`
 
-Si vas a trabajar con repos de otras personas problablemente no quieras hacer un `merge` en automático (que es lo que hace `pull` tras bambalinas) con tu repo local, sino que solo quieras jalar los cambios que hayan hecho otros. Por ejemplo los archivos que agregue a este repo sin que borre lo que tu hayas hecho en tu versión. [Para evitar posibles problemas asociados a esto se recomienda usar `fetch`]((https://help.github.com/articles/fetching-a-remote/)).
+Si vas a trabajar con repos de otras personas problablemente no quieras hacer un `merge` en automático (que es lo que hace `pull` tras bambalinas) con tu repo local, sino que solo quieras jalar los cambios que hayan hecho otros. Por ejemplo los archivos que agregue a este repo sin que borre lo que tu hayas hecho en tu versión. 
+
+[Para evitar posibles problemas asociados a esto se recomienda usar `fetch`]((https://help.github.com/articles/fetching-a-remote/)).
 
 [Diferencias entre fetch y pull](https://longair.net/blog/2009/04/16/git-fetch-and-merge/)
 
@@ -257,7 +261,7 @@ Si vas a trabajar con repos de otras personas problablemente no quieras hacer un
 Para ver el historial de commits que se han hecho en el repo. Por default te mostrará los commits en orden cronológico invertido, pero hay muchas opciones que puedes darle para buscar algo más específico. [Instrucciones aquí](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History).
 
 
-**Ejercicio:** clona el repositorio de Seminarios_LBM
+**Ejercicio:** clona este repositorio
 
 
 #### `git` ACCIONES ESENCIALES QUE NO HAY QUE OLVIDAR
