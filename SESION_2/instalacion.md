@@ -1,6 +1,6 @@
 # Una instalación de software de muestra - Samtools 
 
-Puedes comenzar con este [video](https://drive.google.com/file/d/1WcBkxgg1BDXfIDNE_I5M6kf_JK81hxKY/view?usp=sharing) para la instalación de **MiniConda** en Ubuntu o con éste otro [video en español](https://www.youtube.com/watch?v=-gGxhj62KKw) donde se instala **Anaconda**.
+Puedes comenzar con este [video](https://www.youtube.com/watch?v=px8lAJR0U5M) para la instalación de **MiniConda** en Ubuntu o con éste otro [video](https://www.youtube.com/watch?v=-gGxhj62KKw) dónde se instala **Anaconda**.
 
 > La principal diferencia entre ambos es que Miniconda instala menos complementos que Anaconda, por lo cual, su descargar e instalación es más rápida y ocupando menos espacio, sin embargo, si seguiremos instalando programas con Conda lo más recomendable es instalar Anaconda de una vez.  
 
