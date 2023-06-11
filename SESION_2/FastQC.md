@@ -2,6 +2,7 @@
 
 FastQC es un programa diseñado para detectar problemas potenciales en conjuntos de **datos de secuenciación de alto rendimiento**. Ejecuta un conjunto de análisis en uno o más archivos de secuencia sin procesar en formato **fastq** o **bam** y produce un informe que resume los resultados. 
 
+-----
 Su principal objetivo es indicar cualquier área donde los datos de secuenciación se vean inusuales, por ejemplo en su calidad (phred-score) o en el contenido de G-C. El programa no está vinculado a ningún tipo específico de técnica de secuenciación y se puede usar para analizar datos provenientes de una gran cantidad de diferentes tipos de experimentos (secuenciación genómica, ChIP-Seq, RNA-Seq, BS-Seq, etc.).
 
 Para ejecutar el programa, debe ir a la [página web del proyecto](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) donde puede descargar los paquetes compilados para Windows, MacOS y Linux, además tiene la ventaja de que se puede ejecutar por medio de la línea de comandos o por medio de una interfaz gráfica. En la página del proyecto también hay un [video tutoral](https://www.youtube.com/watch?v=bz93ReOv87Y)
