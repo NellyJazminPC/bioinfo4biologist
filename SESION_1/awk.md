@@ -23,6 +23,9 @@ man awk
 ```bash
 awk -F”\t” ‘{print $1}’ Diamonds_fix.txt
 ```
+> \ -> `Alt Gr` + `?` o `option`+ `?`
+
+
 ¿Qué sucedío?
 
 Ahora prueba la siguiente línea de comando y observa el resultado, ¿qué cambio?
