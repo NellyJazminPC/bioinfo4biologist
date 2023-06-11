@@ -33,13 +33,18 @@ Conocer y aplicar las bases teóricas y prácticas de la bioinformática nivel b
 
 #### [Sesión 2](SESION_2/README.md)
 
-4. Introducción a las variables de entorno e instalación de programas
+4. Introducción a las variables de entorno 
+
+6. Instalación de software de muestra
+
+8. Introducción a Docker
 
 5. Introducción a Git y Github
 
-6. Escribir y documentar scripts informáticos
 
 #### Sesión 3
+
+6. Escribir y documentar scripts informáticos
 
 7. Variables condicionales y for loops
 
@@ -52,7 +57,7 @@ Después de la sesión se dejará una serie de ejercicios para que los estudiant
 Las sesiones duraran dos horas y habrá material extra disponible para que los estudiantes pueden consultarlo en cualquier momento.
 
 ## Calendario
-Horario: 8:00 a 10:00 h
+Horario: 8:00 a 14:00 h
 
 | Día | Actividad |
 | --- |  --- |
