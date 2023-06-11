@@ -35,20 +35,20 @@ Conocer y aplicar las bases teóricas y prácticas de la bioinformática nivel b
 
 4. Introducción a las variables de entorno 
 
-6. Instalación de software de muestra
+5. Instalación de software de muestra
 
-8. Introducción a Docker
+6. Introducción a Docker
 
-5. Introducción a Git y Github
+7. Introducción a Git y Github
 
 
 #### Sesión 3
 
-6. Escribir y documentar scripts informáticos
+8. Escribir y documentar scripts informáticos
 
-7. Variables condicionales y for loops
+9. Variables condicionales y for loops
 
-8. Funciones básicas en R
+10. Funciones básicas en R
 
 
 ### Dinámica del Curso
