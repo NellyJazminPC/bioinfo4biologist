@@ -266,17 +266,17 @@ Para ver el historial de `commits` que se han hecho en el repo. Por default, te 
 
 #### `git` ACCIONES ESENCIALES QUE NO HAY QUE OLVIDAR
 
-> 1) `git pull`: para jalar los cambios de una rama en Github a nuestra rama local (en la compu).
+ 1) `git pull`: para jalar los cambios de una rama en Github a nuestra rama local (en la compu).
 
-> 2) `git status`: lo ejecutas dentro del directorio de tu repo para ver si hay cambios.
+ 2) `git status`: lo ejecutas dentro del directorio de tu repo para ver si hay cambios.
 
-> 3) `git diff <nombrearchivo>`: para ver las modificaciones que se hicieron a un archivo en específico (<nombrearchivo>) desde el último `commit`.
+ 3) `git diff <nombrearchivo>`: para ver las modificaciones que se hicieron a un archivo en específico (<nombrearchivo>) desde el último `commit`.
 
-> 4) `git add <nombrearchivo>` (para un archivo) o `git add *` o `git add .` (para _todos_ los archivos): para agregar los archivos que queremos incluir en un `commit`. Como el equivalente a _adjuntarlos_ en un mensaje que te enviarías por correo.
+ 4) `git add <nombrearchivo>` (para un archivo) o `git add *` o `git add .` (para _todos_ los archivos): para agregar los archivos que queremos incluir en un `commit`. Como el equivalente a _adjuntarlos_ en un mensaje que te enviarías por correo.
 
-> 5) `git commit -m "mensaje corto explicando qué contiene el commit"`: es parecido al mensaje que envías por correo. En este caso, sirve como una nota que recordar que cambios hiciste que ameritaron guardar una nueva versión ("commit").
+ 5) `git commit -m "mensaje corto explicando qué contiene el commit"`: es parecido al mensaje que envías por correo. En este caso, sirve como una nota que recordar que cambios hiciste que ameritaron guardar una nueva versión ("commit").
 
-> 6) `git push`: para enviar nuestros cambios locales al repositorio en Github.
+ 6) `git push`: para enviar nuestros cambios locales al repositorio en Github.
 
 
 
