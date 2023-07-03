@@ -249,7 +249,7 @@ Already up-to-date.
 
 #### `git fetch`
 
-Si vas a trabajar con repos de otras personas problablemente no quieras hacer un `merge` en automático (que es lo que hace `pull` tras bambalinas) con tu repo local, sino que solo quieras jalar los cambios que hayan hecho otros. Por ejemplo los archivos que agregue a este repo sin que borre lo que tu hayas hecho en tu versión. 
+Si vas a trabajar con repo de otras personas problablemente no quieras hacer un `merge` en automático (que es lo que hace `pull` tras bambalinas) con tu repo local, sino que solo quieras jalar los cambios que hayan hecho otros. Por ejemplo, si quieres actualizar la versión de este repo en tu computadora (local) y jalar los archivos que a acabo de agregar sin que se borre lo que tu hayas hecho en tu versión local. 
 
 [Para evitar posibles problemas asociados a esto se recomienda usar `fetch`]((https://help.github.com/articles/fetching-a-remote/)).
 
@@ -258,43 +258,48 @@ Si vas a trabajar con repos de otras personas problablemente no quieras hacer un
 
 #### `git log`
 
-Para ver el historial de commits que se han hecho en el repo. Por default te mostrará los commits en orden cronológico invertido, pero hay muchas opciones que puedes darle para buscar algo más específico. [Instrucciones aquí](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History).
+Para ver el historial de `commits` que se han hecho en el repo. Por default, te mostrará los `commits` en orden cronológico invertido pero hay muchas opciones que puedes utilizar para buscar algo más específico. [Instrucciones aquí](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History).
 
 
-**Ejercicio:** clona este repositorio
+**Ejercicio:** clona este repositorio (*bioinfo4biologist*)
 
 
 #### `git` ACCIONES ESENCIALES QUE NO HAY QUE OLVIDAR
 
-0) `git pull` para jalar los cambios de una rama en Github a nuestra rama local (en la compu).
+> 1) `git pull`: para jalar los cambios de una rama en Github a nuestra rama local (en la compu).
 
-1) `git status` dentro del directorio de tu repo para ver si hay cambios.
+> 2) `git status`: lo ejecutas dentro del directorio de tu repo para ver si hay cambios.
 
-2) `git diff nombrearchivo` para ver las modificaciones que se hicieron a un archivo desde el último commit.
+> 3) `git diff <nombrearchivo>`: para ver las modificaciones que se hicieron a un archivo en específico (<nombrearchivo>) desde el último `commit`.
 
-3) `git add nombrearchivo` (para un archivo) o `git add *` o `git add .` (para todos los archivos) para agregar los archivos **que queremos incluir en un commit**. Como el equivalente a "adjuntarlos" en un correo que te enviarías por correo.
+> 4) `git add <nombrearchivo>` (para un archivo) o `git add *` o `git add .` (para _todos_ los archivos): para agregar los archivos que queremos incluir en un `commit`. Como el equivalente a _adjuntarlos_ en un mensaje que te enviarías por correo.
 
-4) `git commit -m "mensaje corto explicando qué contiene el commit"`. Como el contenido de un correo donde te explicarías a tí mismo qué cambios hiciste que ameritan guardar la versión ("commit").
+> 5) `git commit -m "mensaje corto explicando qué contiene el commit"`: es parecido al mensaje que envías por correo. En este caso, sirve como una nota que recordar que cambios hiciste que ameritaron guardar una nueva versión ("commit").
 
-5) `git push` para enviar nuestros cambios locales a Github.
+> 6) `git push`: para enviar nuestros cambios locales al repositorio en Github.
 
 
 
 #### ¿Cómo volver al pasado?
 
-Hay muchas formas. [Esta respuesta de Stacksoverflow es una buena guía](https://stackoverflow.com/questions/4114095/how-to-revert-a-git-repository-to-a-previous-commit).
+Hay muchas formas y en [esta respuesta de Stacksoverflow puedes encontrar una buena guía](https://stackoverflow.com/questions/4114095/how-to-revert-a-git-repository-to-a-previous-commit).
 
 
 
-### Recomendación: ignorar archivos que no queremos que git siga**
+### RECOMENDACIÓN: ignorar archivos que no queremos que git siga**
 
-Algunos archivos no queremos que sean considerados por `git`, por ejemplo archivos que la compu hace en automático como los "fantasmitas de Mac" o archivos de datos muy pesados si queremos solo publicar el código. Podemos entonces decirle a git cuáles archivos ignorar. Pasos:
+Es normal que haya algunos archivos que no queremos que sean considerados por `git` en nuestro repo local. Por ejemplo, archivos que la compu hace en automático como los "fantasmitas de Mac" o el historial de R, también hay archivos de datos muy pesados como datos genómicos de muchos individuos o datos que queremos liberar cuando el trabajo y el código sean publicados. Para evitar estar seleccionando uno por uno, podemos indicarle a git cuáles archivos ignorar con un archivo texto en donde podemos ir agregando o quitando aquellos archivos que no queremos que `git` siga. 
 
-1) Crear un archivo `.gitignore` en el working directory de tu repositorio (donde vive tu `.git` que se creó con `git init` o con `git clone`).
+Los pasos para hacerlo:
 
-`touch .gitignore` (nota el punto `.`)
+1) Crear un archivo `.gitignore` en el directorio de trabajo de tu repositorio (donde vive tu `.git` que se creó con `git init` o con `git clone`).
 
-2) En ese archivo poner el nombre (o las extensiones) de los archivos que quieres ignorar. [Aquí puedes ver una lista de casos comunes proporcionada por Github](https://gist.github.com/octocat/9257657).
+   Ya que se trata de un archivo de texto puedes utilizar `vim`, `touch` o `nano`
+   
+`touch .gitignore` (NOTA el punto `.` al comienzo del nombre del archivo)
+
+3) En ese archivo ponemos el nombre de los archivos que quieres que `git` ignore.
+[Aquí, puedes ver una lista de casos comunes proporcionada por Github](https://gist.github.com/octocat/9257657).
 
 Por ejemplo para un repositorio en MacOS:
 
@@ -316,7 +321,7 @@ Thumbs.db
 
 ```
 
-3) Si haces un `git status` notarás que aparece `.gitignore` como untracked. Entonces debes:
+3) Si haces un `git status` notarás que aparece `.gitignore` como *untracked*. Entonces debes agregar el archivo para que esa lista de que archivos quieres ignorar quede actualizada:
 
 ```
 $ git add .gitignore
@@ -324,4 +329,4 @@ $ git commit -m "Added .gitignore file to repo"
 $ git push
 ```
 
-También puedes crear un `.gitignore` global que aplique en todos los repos de tu compu. Instrucciones [aquí](https://help.github.com/articles/ignoring-files/)
+Si tienes varios repositorios en tu computadora, también puedes crear un `.gitignore` global que aplique en todos los repos de tu compu. Instrucciones [aquí](https://help.github.com/articles/ignoring-files/)
