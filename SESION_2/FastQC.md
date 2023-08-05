@@ -73,23 +73,27 @@ fastqc ../181004_curso_calidad_datos_NGS/fastq_raw/S3_R1.fastq.gz -o .
 
 **NOTA**: es importante recordar que debemos estar dentro de la carpeta de **FastQC/**, en donde se encuentra el archivo ejecutable **fastqc**
   
-  Ahora, si queremos hacerlo para todos los archivos **fastq.gz** que se encuentran en una carpeta, podrían ser 1, 10 o cientos? 
+  Ahora, si queremos analizar 100 o 200 archivos sería muy tedioso hacer uno por uno, habrá una forma para automatizarlo?
+  Si, si queremos hacerlo para todos los archivos **fastq.gz** que se encuentran en una carpeta, necesitamos usar el comodín `*`
   
-  Si, solo necesitamos usar el comodín `*`
-  
+  Ejemplo:
+
   
 ```console
   
 fastqc ../181004_curso_calidad_datos_NGS/fastq_raw/*.fastq.gz -o . 
   
 ```
+Nota que el  flag **-o** es para el *output* y en *.* es para indicar que sea en el directorio actual, es decir, *aquí*.
+
   
   **¿Cómo sería un script?**
   
-  
+  Si queremos llevar un control de los comandos y archivos que analizamos es bueno tener un script. Para este caso, usando el comando de fastqc, **intenta hacer un script**.
 
-  
-  
+Después de intentarlo, puede revisar un ejemplo [aquí](0.1_fastqc.sh).
+
+
   
 ## Otra forma de instalación con Conda
 
