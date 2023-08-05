@@ -87,7 +87,7 @@ fastqc ../181004_curso_calidad_datos_NGS/fastq_raw/*.fastq.gz -o .
 Nota que el  flag **-o** es para el *output* y en *.* es para indicar que sea en el directorio actual, es decir, *aquí*.
 
   
-  **¿Cómo sería un script?**
+## ¿Cómo sería en un script?
   
   Si queremos llevar un control de los comandos y archivos que analizamos es bueno tener un script. Para este caso, usando el comando de fastqc, **intenta hacer un script**.
 
