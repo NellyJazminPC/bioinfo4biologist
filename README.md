@@ -84,3 +84,6 @@ Para ir comenzando es importante revisar el siguiente glosario con algunos de lo
 
 ### [Otros sitios recomendados](https://github.com/NellyJazminPC/bioinfo4biologist/blob/main/Otros_recursos_recomendados.md)
 
+
+### Literatura recomendada:
+- [Not just for programmers: How GitHub can accelerate collaborative and reproducible research in ecology and evolution](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14108)
