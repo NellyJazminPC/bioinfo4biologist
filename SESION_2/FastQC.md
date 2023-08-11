@@ -24,7 +24,7 @@ A continuación nos vamos a centrar en como usar FastQC en Linux:
 
 - Desde la terminal, ingresamos a la carpeta descomprimida y ejecutamos el script **fastqc**:
 
-```console
+```bash
 
 ./fastqc 
 
@@ -79,7 +79,7 @@ fastqc ../181004_curso_calidad_datos_NGS/fastq_raw/S3_R1.fastq.gz -o .
   Ejemplo:
 
   
-```console
+```bash
   
 fastqc ../181004_curso_calidad_datos_NGS/fastq_raw/*.fastq.gz -o . 
   
