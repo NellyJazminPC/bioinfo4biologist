@@ -81,6 +81,7 @@ Para ir comenzando es importante revisar el siguiente glosario con algunos de lo
 ### Sitios recomendados y tomados como referencia:
 
 - Curso **Bioinformatics for Biologists** (futurelearn.com)
+- Cursos en DataCamp. Por ejemplo [Introducción a R](https://www.datacamp.com/courses/free-introduction-to-r)
 
 ### [Otros sitios recomendados](https://github.com/NellyJazminPC/bioinfo4biologist/blob/main/Otros_recursos_recomendados.md)
 
