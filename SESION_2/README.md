@@ -13,8 +13,8 @@
 ### 2.- [Probando FastQC](FastQC.md)
 
 ## Introducción a Docker
-### 1.- [¿Qué es Docker?](FastQC.md)
-### 2.- [Instalación y comandos básicos](FastQC.md)
+### 1.- [¿Qué es Docker?](Docker_intro.md)
+### 2.- [Instalación y comandos básicos](Docker_commands.md)
 
 ## Introducción a Git y Github
 ### 1.- [Un breve tutorial de Github Desktop](GitHub/README.md)
