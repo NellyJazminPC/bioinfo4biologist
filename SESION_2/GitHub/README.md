@@ -82,6 +82,9 @@ https://desktop.github.com/
 
 Guía https://docs.github.com/es/free-pro-team@latest/desktop/installing-and-configuring-github-desktop/installing-github-desktop
 
+Recomendación de video en Youtube para seguir la instalación de [Github Desktop](https://www.youtube.com/watch?v=TuOQBfhp-r0)  
+
+
 ![](2020-11-09%20(3).png)
 
 ![](2020-11-09%20(4).png)
