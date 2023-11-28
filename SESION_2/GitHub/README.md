@@ -85,59 +85,73 @@ Guía https://docs.github.com/es/free-pro-team@latest/desktop/installing-and-con
 Recomendación de video en Youtube para seguir la instalación de [Github Desktop](https://www.youtube.com/watch?v=TuOQBfhp-r0)  
 
 
-![](2020-11-09%20(3).png)
+<img src=2020-11-09%20(3).png align="center" width=600>
+<img src=2020-11-09%20(4).png align="center" width=600>
+<img src=2020-11-09%20(6).png align="center" width=600>
+<img src=2020-11-09%20(8).png align="center" width=600>
+<img src=2020-11-09%20(9).png align="center" width=600>
+<img src=2020-11-09%20(10).png align="center" width=600>
 
-![](2020-11-09%20(4).png)
-![](2020-11-09%20(6).png)
-![](2020-11-09%20(8).png)
-![](2020-11-09%20(9).png)
-
-![](2020-11-09%20(10).png)
 
 ## Terminamos la instalación y ahora comenzamos a explorar GitHub Desktop
-![](2020-11-09%20(11).png)
 
+<img src=2020-11-09%20(11).png align="center" width=500>
 
-![](2020-11-09%20(12).png)
+<img src=2020-11-09%20(12).png align="center" width=500>
+
 
 ### Vamos a File y observamos la lista de acciones que se desglosa, entre ellas vamos a Options
-![](2020-11-09%20(14).png)
+
+<img src=2020-11-09%20(14).png align="center" width=500>
 
 **Podemos cambiar la apariencia**
-![](2020-11-09%20(15).png)
+
+<img src=2020-11-09%20(15).png align="center" width=500>
+
 
 ## Intenta crear un nuevo repositorio
-![](2020-11-09%20(16).png)
+
+<img src=2020-11-09%20(16).png align="center" width=500>
 
 
 ### Observa las opciones que aparecen
-![](2020-11-09%20(17).png)
+<img src=2020-11-09%20(17).png align="center" width=500>
+
 
 ### Para sincronizar este repositorio local con tu cuenta GitHub en la nube vamos a publicar **Publish**
-![](2020-11-09%20(18).png)
-![](2020-11-09%20(19).png)
-![](2020-11-09%20(20).png)
+<img src=2020-11-09%20(18).png align="center" width=500>
+<img src=2020-11-09%20(19).png align="center" width=500>
+<img src=2020-11-09%20(20).png align="center" width=500>
+
 
 ### Ve a tu cuenta y actualiza la página, debe aparecer un nuevo repositorio, el que acabas de publicar
-![](2020-11-09%20(21).png)
-![](2020-11-09%20(22).png)
+<img src=2020-11-09%20(21).png align="center" width=500>
+<img src=2020-11-09%20(22).png align="center" width=500>
+
+
 
 ### Por ahora tu repositorio esta vacio, si tienes algún archivo que quieras incorporar puedes copiar y pegar o mover ese archivo a tu directorio local donde esta el repositorio que creaste
-![](2020-11-09%20(24).png)
-![](2020-11-09%20(25).png)
-![](2020-11-09%20(26).png)
-![](2020-11-09%20(27).png)
+<img src=2020-11-09%20(24).png align="center" width=500>
+<img src=2020-11-09%20(25).png align="center" width=500>
+<img src=2020-11-09%20(26).png align="center" width=500>
+<img src=2020-11-09%20(27).png align="center" width=500>
+
+
 
 ### Para poder sincronizar los cambios debes agregar un comentario en **Commit to main**
-![](2020-11-09%20(29).png)
+
+<img src=2020-11-09%20(29).png align="center" width=500>
+
 
 ### Después, vas a Repository y das click en **Push**
-![](2020-11-09%20(31).png)
+
+<img src=2020-11-09%20(31).png align="center" width=500>
+
 
 ### Ahora ve a tu cuenta en la nube y comprueba que los cambios se hayan sincronizado
-![](2020-11-09%20(35).png)
-![](2020-11-09%20(36).png)
 
+<img src=2020-11-09%20(35).png align="center" width=500>
+<img src=2020-11-09%20(36).png align="center" width=500>
 
 ### Documentación extra
 
@@ -155,5 +169,6 @@ Recomendación de video en Youtube para seguir la instalación de [Github Deskto
 + Lee la [documentación de `pull request` en Github](https://help.github.com/en/articles/about-pull-requests).
 
 ### Un editor de texto recomendado por GitHub para Windows o MacOS
-![](2020-11-09%20(37).png)
-![](2020-11-09%20(39).png)
+<img src=2020-11-09%20(37).png align="center" width=600>
+<img src=2020-11-09%20(39).png align="center" width=600>
+
