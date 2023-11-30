@@ -5,8 +5,8 @@ Antes de empezar, recomiendo la lectura de [Improving code reproducibility: Smal
 Consejos para Mejorar la Reproducibilidad en Código R:
 
 1. **Asegura entornos de trabajo compartibles:**
-   - Utiliza Proyectos R y el paquete {here} para la configuración automática de directorios.
-   - Emplea el paquete {renv} para documentar y cargar paquetes de análisis.
+   - Utiliza [Proyectos R](https://r4ds.had.co.nz/workflow-projects.html) y el [paquete {here}](https://here.r-lib.org/) para la configuración automática de directorios.
+   - Emplea el [paquete {renv}](https://rstudio.github.io/renv/index.html) para documentar y cargar paquetes de análisis.
    - Respalda el código en GitHub para control de versiones y colaboración.
 
 2. **Prioriza la legibilidad en el código y las notas:**
