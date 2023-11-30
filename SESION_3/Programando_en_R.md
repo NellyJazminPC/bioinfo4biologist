@@ -14,7 +14,7 @@ Consejos para Mejorar la Reproducibilidad en Código R:
    - Escribe notas en el código de forma simple e informativa explicando cada paso.
 
 3. **Convierte el código en un documento:**
-   - Utiliza R Markdown o Quarto para generar documentos de manera rápida y visualmente atractiva.
+   - Utiliza R Markdown o [Quarto](https://quarto.org/) para generar documentos de manera rápida y visualmente atractiva.
    - Guarda documentos para referenciar los pasos de entrada, salida y procesamiento intermedio en los análisis.
 
 Estas prácticas mejoran la reproducibilidad, ahorran tiempo y facilitan la colaboración en la investigación.
