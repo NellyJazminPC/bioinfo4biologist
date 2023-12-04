@@ -1,5 +1,8 @@
 # SESIÓN 3
 
+## Escribir y documentar scripts informáticos
+
 ## Variables condicionales y _for loops_
 
-## Funciones báscias en R
+## Funciones básicas en R
+
