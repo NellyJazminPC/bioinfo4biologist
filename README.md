@@ -89,4 +89,4 @@ Para ir comenzando es importante revisar el siguiente glosario con algunos de lo
 ### Literatura recomendada:
 - [Not just for programmers: How GitHub can accelerate collaborative and reproducible research in ecology and evolution](https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.14108)
 - [Improving code reproducibility: Small steps with big impacts](https://communities.springernature.com/posts/improving-code-reproducibility-small-steps-with-big-impacts?utm_source=newsletter_mailer&utm_medium=email&utm_campaign=newsletter)
-- 
+- [Is AI leading to a reproducibility crisis in science?](https://www.nature.com/articles/d41586-023-03817-6)
