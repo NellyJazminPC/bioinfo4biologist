@@ -25,13 +25,15 @@ Es decir, lo mismo que escribiríamos en la Terminal para hacer un análisis per
 
 Para que la computadora distinga entre el código y los comentarios para humanos se utiliza el símbolo **`#`**. Todo el texto a la **derecha** del símbolo **`#`** será ignorado por la computadora, aunque sí "se imprima" en la Consola. 
 
-Por ejemplo, el texto siguiente es un **script**. Usalo para crear un archivo `.sh` y ejecútalo en tu terminal, ¿que obtuviste?:
+El siguiente texto es un **script** de ejemplo. 
+
+Cambia el valor de la variable `name` por **tu nombre**, crea un archivo de texo en la terminal con la terminación `.sh` y ejecútalo desde tu terminal, ¿que obtuviste?:
 
 ````
 #!/usr/bin/env bash
 
-name="Victoria"
-greeting="Good morning,"
+name="Alondra"
+greeting="Buenos días"
  
 echo "${greeting} ${name}"
 ````
@@ -39,18 +41,18 @@ echo "${greeting} ${name}"
 Al correr este script obtendras:
 
 ````
-Good morning, Victoria
+Buenos días Alondra
 ````
 
 ### Cómo hacer un script
 
-Ya hemos visto que un script es un archivo de texto con código y comentarios. Esta es una generalidad cierta para cualquier lenguaje de programación (aunque los comentarios no son obligatorios se recomienda mucho).
+Ya hemos visto que un **script es un archivo de texto con código y comentarios**. Esta es una generalidad cierta para cualquier lenguaje de programación (aunque los comentarios no son obligatorios, se recomienda mucho).
 
 Sin embargo los scripts que corremos desde la Terminal Unix, es decir scripts de *Bash* o *Shell* requiren de 3 pasos para **convertirse en software**:
 
-1. Escribir los comandos, es decir, las instrucciones, en un archivo de texto, en otras palabras, escribir el **script**.
+1. Escribir los comandos (las instrucciones) en un archivo de texto, en otras palabras, escribir el **script**.
 2. Hay que indicarle al sistema operativo que programa, es decir, que **lenguaje** de programación debe utilizar para *interpretar* los comandos y poder ejecutarlos
-3. El _script_ (archivo) necesita los **permisos** que necesita para poder ser ejecutado por Shell.
+3. El *script* (archivo) necesita los **permisos** que necesita para poder ser ejecutado por Shell.
 
 ### Comencemos a escribir
 
