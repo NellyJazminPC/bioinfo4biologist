@@ -44,19 +44,21 @@ Al correr este script obtendras:
 Buenos días Alondra
 ````
 
+**Ejercicio extra:** Cambia las palabras de inglés (name, greeting) a español y vuelve a ejecutar tu script, ¿funcionó? 
+
 ### Cómo hacer un script
 
 Ya hemos visto que un **script es un archivo de texto con código y comentarios**. Esta es una generalidad cierta para cualquier lenguaje de programación (aunque los comentarios no son obligatorios, se recomienda mucho).
 
 Sin embargo los scripts que corremos desde la Terminal Unix, es decir scripts de *Bash* o *Shell* requiren de 3 pasos para **convertirse en software**:
 
-1. Escribir los comandos (las instrucciones) en un archivo de texto, en otras palabras, escribir el **script**.
-2. Hay que indicarle al sistema operativo que programa, es decir, que **lenguaje** de programación debe utilizar para *interpretar* los comandos y poder ejecutarlos
-3. El *script* (archivo) necesita los **permisos** que necesita para poder ser ejecutado por Shell.
+1. Escribir los comandos, en otras palabras las instrucciones, en un archivo de texto. Esto es escribir el **script**.
+2. Hay que indicarle al sistema operativo que **lenguaje** de programación se debe utilizar para *interpretar* los comandos y poder ejecutarlos.
+3. El *script*, que es basicamente un archivo de texto, necesita los **permisos** para poder ser ejecutado por Shell y convertirse en un *programa*.
 
 ### Comencemos a escribir
 
-Para escribir un script necesitamos un **editor de texto** y los comandos que ocuparemos para resolver un problema, además, un script con comentarios es una buena práctica para saber que es lo que hará nuestros script.
+Para escribir un **script** necesitamos un **editor de texto** y los comandos que ocuparemos para resolver un problema, además, un script con comentarios es una buena práctica para saber que es lo que hará nuestros script.
 
 Los principales pasos para escribir un script son:
 
