@@ -91,3 +91,8 @@ Para ir comenzando es importante revisar el siguiente glosario con algunos de lo
 - [Improving code reproducibility: Small steps with big impacts](https://communities.springernature.com/posts/improving-code-reproducibility-small-steps-with-big-impacts?utm_source=newsletter_mailer&utm_medium=email&utm_campaign=newsletter)
 - [Is AI leading to a reproducibility crisis in science?](https://www.nature.com/articles/d41586-023-03817-6)
 - [Scalable, accessible and reproducible reference genome assembly and evaluation in Galaxy](https://www.nature.com/articles/s41587-023-02100-3)
+
+Nuevos paquetes de R en desarrollo - con objetivos biológicos 
+- [callsync: an R package for alignment and analysis of multi-microphone animal recordings](https://www.biorxiv.org/content/10.1101/2023.02.07.527470v2?rss=1)
+- [Rbims: Herramientas R para reconstruir metabolismos bin](https://github.com/mirnavazquez/RbiMs)
+- 
