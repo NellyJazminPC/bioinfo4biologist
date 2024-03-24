@@ -17,6 +17,7 @@
 ### Machine Learning with R
 - [Hands-On Machine Learning with R](https://bradleyboehmke.github.io/HOML/)
 - [Deep Learning](https://www.deeplearningbook.org/contents/TOC.html)
+- [**Curso** MOOC Machine Learning y Big Data para la Bioinformática de la Universidad de Granada, España](https://abierta.ugr.es/course/view.php?id=14)
 
 
 # Estadística y Data Science
