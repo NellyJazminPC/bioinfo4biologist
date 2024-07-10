@@ -1,19 +1,30 @@
-# INTRODUCCIÓN A LA BIOINFORMÁTICA
+# CURSO: Introducción a la Bioinformática
 
---------------------------------------------
+---
 
 Curso teórico-práctico para principiantes en la bioinformática.
 
---------------------------------------------
+El curso se ofrecerá en la modalidad virtual con cuatro horas de lunes a viernes durante cuatro semanas (80h).
 
-### Profesora
+---
 
-M. en C. [Nelly Jazmín Pacheco Cruz](https://www.canva.com/design/DAFfqoZ7CRM/sNhSDPwvXI888-XdGj7z-w/watch?utm_content=DAFfqoZ7CRM&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink)
+### Instructora
 
--------------------------------------------------
+M. en C. Nelly Jazmín Pacheco Cruz
 
-### Objetivos
+nelly.pacheco.cruz@iztacala.unam.mx
+
+---
+
+### Objetivo general
+
 Conocer y aplicar las bases teóricas y prácticas de la bioinformática nivel básico, principalmente en el procesamientos y análisis de datos genéticos.
+
+### Objetivos específicos
+
+- Adquirir habilidades básicas en el uso del shell de Unix/Linux a través de la terminal.
+- Conocer el manejo básico de la programación en R en RStudio
+- Aplicar herramientas bioinformáticas para realizar análisis de secuencias genéticas.
 
 
 ### Pre-requisitos
@@ -23,7 +34,7 @@ Conocer y aplicar las bases teóricas y prácticas de la bioinformática nivel b
 
 ## Temario
 
-#### [Sesión 1](SESION_1/README.md)
+### [Sesión 1](SESION_1/README.md)
 
 1. Introducción a la Bioinformática
 
@@ -31,7 +42,7 @@ Conocer y aplicar las bases teóricas y prácticas de la bioinformática nivel b
 
 3. Manipulación y procesamiento de archivos
 
-#### [Sesión 2](SESION_2/README.md)
+### [Sesión 2](SESION_2/README.md)
 
 4. Introducción a las variables de entorno 
 
@@ -42,7 +53,7 @@ Conocer y aplicar las bases teóricas y prácticas de la bioinformática nivel b
 7. Introducción a Git y Github
 
 
-#### Sesión 3
+### Sesión 3
 
 8. Escribir y documentar scripts informáticos
 
