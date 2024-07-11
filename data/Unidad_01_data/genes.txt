@@ -1,0 +1,4 @@
+pyruvate_kinase	2	20
+phosphatase	4	40
+MAP_kinase	1	1
+
