@@ -86,15 +86,15 @@ Conocer y aplicar las bases teóricas y prácticas de la bioinformática nivel b
 
 3. Introducción a Docker
 
-3.1 [¿Qué es Docker?](doc/Unidad_02/Docker_intro.md)
+    3.1 [¿Qué es Docker?](doc/Unidad_02/Docker_intro.md)
 
-3.2 [Instalación y comandos básicos](doc/Unidad_02/Docker_commands.md)
+    3.2 [Instalación y comandos básicos](doc/Unidad_02/Docker_commands.md)
 
 4. Introducción a Git y Github
 
-4.1 [Un breve tutorial de Github Desktop](GitHub/README.md)
+    4.1 [Un breve tutorial de Github Desktop](GitHub/README.md)
 
-4.2 [Descripción de los comandos básicos - Terminal](GitHub/comandos.md)
+    4.2 [Descripción de los comandos básicos - Terminal](GitHub/comandos.md)
 
 ### Sesión 3
 
