@@ -96,7 +96,7 @@ Conocer y aplicar las bases teóricas y prácticas de la bioinformática nivel b
 
     4.2 [Descripción de los comandos básicos - Terminal](doc/Unidad_02/GitHub/comandos.md)
 
-### [Unidad 2](doc/Unidad_03/)
+### [Unidad 3](doc/Unidad_03/)
 
 1. Escribir y documentar scripts informáticos
     
