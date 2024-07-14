@@ -92,17 +92,21 @@ Conocer y aplicar las bases teóricas y prácticas de la bioinformática nivel b
 
 4. Introducción a Git y Github
 
-    4.1 [Un breve tutorial de Github Desktop](GitHub/README.md)
+    4.1 [Un breve tutorial de Github Desktop](doc/Unidad_02/GitHub/README.md)
 
-    4.2 [Descripción de los comandos básicos - Terminal](GitHub/comandos.md)
+    4.2 [Descripción de los comandos básicos - Terminal](doc/Unidad_02/GitHub/comandos.md)
 
-### Sesión 3
+### [Unidad 2](doc/Unidad_03/)
 
-8. Escribir y documentar scripts informáticos
+1. Escribir y documentar scripts informáticos
+    
+    1.1 [Reproducibilidad en los scripts](doc/Unidad_03/Reproducibilidad.md)
+    
+    1.2 [Pasos para crear un script](doc/Unidad_03/resumen_scripts.md)
 
-9. Variables condicionales y for loops
+2. Variables condicionales y for loops
 
-10. Funciones básicas en R
+3. [Funciones básicas en R](doc/Unidad_03/Programando_en_R.md)
 
 ---
 
@@ -118,13 +122,13 @@ Horario: 8:00 a 14:00 h
 
 | Día | Actividad |
 | --- |  --- |
-| Martes 11 | 1.- Introducción a la Bioinformática |
+| Martes  | 1.- Introducción a la Bioinformática |
 |      |  2.- Sistema linux y comando básicos en la terminal |
 |        |  3.- Manipulación y procesamiento de archivos |
-|Jueves 13 | 4.- Introducción a las variables de entorno e instalación de programas |
+|Jueves  | 4.- Introducción a las variables de entorno e instalación de programas |
 |              | 5.- Introducción a Git y Github |
 |              | 6.- Escribir y documentar scripts informáticos |
-|Jueves 27 | 7.- Variables condicionales y for loops |
+|Jueves  | 7.- Variables condicionales y for loops |
 |          | 8.- Funciones básicas en R |
 
 ---
