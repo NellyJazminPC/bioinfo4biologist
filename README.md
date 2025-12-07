@@ -38,7 +38,7 @@ Conocer y aplicar las bases teóricas y prácticas de la bioinformática nivel b
 
 2. Sistema linux y comando básicos en la terminal
 
-    2.1 [¿Qué es Linux y por qué usarlo?](bioinfo4biologist/doc/Unidad_01/Linux.md)
+    2.1 [¿Qué es Linux y por qué usarlo?](/doc/Unidad_01/Linux.md)
 
     2.2 [La terminal y la línea de comandos](bioinfo4biologist/doc/Unidad_01/Terminal.md)
 
