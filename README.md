@@ -40,35 +40,35 @@ Conocer y aplicar las bases teóricas y prácticas de la bioinformática nivel b
 
     2.1 [¿Qué es Linux y por qué usarlo?](/doc/Unidad_01/Linux.md)
 
-    2.2 [La terminal y la línea de comandos](bioinfo4biologist/doc/Unidad_01/Terminal.md)
+    2.2 [La terminal y la línea de comandos](/doc/Unidad_01/Terminal.md)
 
-    2.3 [El sistema de archivos de Linux: directorios y archivos](bioinfo4biologist/doc/Unidad_01/Sistema_archivos_linux.md)
+    2.3 [El sistema de archivos de Linux: directorios y archivos](/doc/Unidad_01/Sistema_archivos_linux.md)
 
-    2.4 [Conceptos básicos de la línea de comandos](bioinfo4biologist/doc/Unidad_01/linea_comandos.md)
+    2.4 [Conceptos básicos de la línea de comandos](/doc/Unidad_01/linea_comandos.md)
 
-    2.5 [Archivos, propiedad y permisos](bioinfo4biologist/doc/Unidad_01/Archivos_permisos.md)
+    2.5 [Archivos, propiedad y permisos](/doc/Unidad_01/Archivos_permisos.md)
 
     2.6 [Pistas, tips y atajos](https://drive.google.com/file/d/1Fwb7rzihKH6SpdX6pCLlJZqEppxmxBpI/view?usp=sharing)
 
 3. Manipulación y procesamiento de archivos
 
-    3.1 [Edición de texto y escritura de archivos](bioinfo4biologist/doc/Unidad_01/Edicion_texto.md)
+    3.1 [Edición de texto y escritura de archivos](/doc/Unidad_01/Edicion_texto.md)
 
-    3.2 [Acceso al contenido del archivo](bioinfo4biologist/doc/Acceso_cont_archivo.md)
+    3.2 [Acceso al contenido del archivo](/doc/Acceso_cont_archivo.md)
 
-    3.3 [Enlaces simbólicos y su uso](bioinfo4biologist/doc/Enlaces_simbolicos.md)
+    3.3 [Enlaces simbólicos y su uso](/doc/Enlaces_simbolicos.md)
 
-    3.4 [Comenzando con `wc`](bioinfo4biologist/doc/wc.md)
+    3.4 [Comenzando con `wc`](/doc/wc.md)
 
-    3.5 [Manipulación de archivos: `sort` y `uniq`](bioinfo4biologist/doc/sort_uniq.md)
+    3.5 [Manipulación de archivos: `sort` y `uniq`](/doc/sort_uniq.md)
 
-    3.6 [Coincidencia de patrones: `grep`](bioinfo4biologist/doc/grep.md)
+    3.6 [Coincidencia de patrones: `grep`](/doc/grep.md)
 
-    3.7 [Sustituciones usando `sed`](bioinfo4biologist/doc/sed.md)
+    3.7 [Sustituciones usando `sed`](/doc/sed.md)
 
-    3.8 [Procesamiento de archivos con `AWK`](bioinfo4biologist/doc/awk.md)
+    3.8 [Procesamiento de archivos con `AWK`](/doc/awk.md)
 
-    3.9 [Test](bioinfo4biologist/doc/Test_parte1.md)
+    3.9 [Test](/doc/Test_parte1.md)
 
 ### [Unidad 2](doc/Unidad_02/)
 
