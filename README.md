@@ -34,7 +34,7 @@ Conocer y aplicar las bases teóricas y prácticas de la bioinformática nivel b
 - Trabajaremos sobre la línea de comandos de Linux y explicaremos la estructura de directorios del sistema de archivos.
 - Algunos comandos esenciales de Linux demostrarán cómo acceder, manipular y editar archivos de texto.
 
-1. Introducción a la Bioinformática: Presentación ["Bioinformática, si no es ahora será mañana"](https://docs.google.com/presentation/d/e/2PACX-1vTJithkqakvslzBI_T1MJisIqemVi-fdU9uDC5SB6IR7GK3zc3oAEHFbPJiciHMbJT9yvuSovfOdTJk/pub?start=true&loop=false&delayms=60000)
+1. Introducción a la Bioinformática: Presentación ["Bioinformática, si no es ahora será mañana"](https://docs.google.com/presentation/d/e/2PACX-1vRJUD3wsuSokSaG_eTpgk_Wco9byBHA4NO84iZ6UaB5F4OJjKkBiFhLApDDie8ENQ/pub?start=true&loop=false&delayms=3000)
 
 2. Sistema linux y comando básicos en la terminal
 
