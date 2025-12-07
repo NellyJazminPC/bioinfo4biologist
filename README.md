@@ -54,21 +54,21 @@ Conocer y aplicar las bases teóricas y prácticas de la bioinformática nivel b
 
     3.1 [Edición de texto y escritura de archivos](/doc/Unidad_01/Edicion_texto.md)
 
-    3.2 [Acceso al contenido del archivo](/doc/Acceso_cont_archivo.md)
+    3.2 [Acceso al contenido del archivo](/doc/Unidad_01/Acceso_cont_archivo.md)
 
-    3.3 [Enlaces simbólicos y su uso](/doc/Enlaces_simbolicos.md)
+    3.3 [Enlaces simbólicos y su uso](/doc/Unidad_01/Enlaces_simbolicos.md)
 
-    3.4 [Comenzando con `wc`](/doc/wc.md)
+    3.4 [Comenzando con `wc`](/doc/Unidad_01/wc.md)
 
-    3.5 [Manipulación de archivos: `sort` y `uniq`](/doc/sort_uniq.md)
+    3.5 [Manipulación de archivos: `sort` y `uniq`](/doc/Unidad_01/sort_uniq.md)
 
-    3.6 [Coincidencia de patrones: `grep`](/doc/grep.md)
+    3.6 [Coincidencia de patrones: `grep`](/doc/Unidad_01/grep.md)
 
-    3.7 [Sustituciones usando `sed`](/doc/sed.md)
+    3.7 [Sustituciones usando `sed`](/doc/Unidad_01/sed.md)
 
-    3.8 [Procesamiento de archivos con `AWK`](/doc/awk.md)
+    3.8 [Procesamiento de archivos con `AWK`](/doc/Unidad_01/awk.md)
 
-    3.9 [Test](/doc/Test_parte1.md)
+    3.9 [Test](/doc/Unidad_01/Test_parte1.md)
 
 ### [Unidad 2](doc/Unidad_02/)
 
